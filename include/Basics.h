@@ -1,11 +1,22 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <map>
+
 
 enum class OpCode { ADD, SUB, ADDI, MUL, DIV, REM, LW, SW, BEQ, BNE, BLT, BLE, J, SLT, SLTI, AND, OR, XOR, ANDI, ORI, XORI };
 enum class UnitType { ADDER, MULTIPLIER, DIVIDER, LOADSTORE, BRANCH, LOGIC };
 
-std::vector <OpCode> branchOp = {OpCode::BEQ, OpCode::BNE, OpCode::BLT, OpCode::BNE};
+inline const std::vector<OpCode> branchOp = {OpCode::BEQ, OpCode::BNE, OpCode::BLT, OpCode::BNE};
+inline const std::map<std::string, OpCode> opMap = {
+    {"add",  OpCode::ADD},  {"sub",  OpCode::SUB},  {"slt",  OpCode::SLT},
+    {"addi", OpCode::ADDI},  {"slti", OpCode::SLTI},
+    {"mul",  OpCode::MUL}, {"div",  OpCode::DIV}, {"rem",  OpCode::REM},
+    {"and",  OpCode::AND},  {"or",   OpCode::OR},  {"xor",  OpCode::XOR},
+    {"andi", OpCode::ANDI},  {"ori",  OpCode::ORI},   {"xori", OpCode::XORI},
+    {"lw",   OpCode::LW},    {"sw",   OpCode::SW},  {"j",    OpCode::J},
+    {"beq",  OpCode::BEQ},  {"bne",  OpCode::BNE}, {"blt",  OpCode::BLT},  {"ble",  OpCode::BLE},
+};
 
 struct Instruction {
     OpCode op;
@@ -26,8 +37,7 @@ struct ProcessorConfig {
     int mul_lat = 4;
     int div_lat = 5;
     int mem_lat = 4;
-    // int br_lat = ??;
-    // int logic_lat = ??;
+    int br_lat = 1; 
 
     int logic_rs_size = 4;
     int adder_rs_size = 4;
@@ -35,26 +45,13 @@ struct ProcessorConfig {
     int div_rs_size = 2;
     int lsq_rs_size = 32;
     int br_rs_size = 2;
-    // int logic_rs_size = ??;
-
 };
-
 
 struct Broadcast {
     int tag;
     int value;
     bool valid;
     bool exception;
-};
-
-struct CDB {
-    Broadcast current;
-    void broadcast(int tag, int value, bool exception) {
-        current = {tag, value, true, exception};
-    }
-    void clear() {
-        current.valid = false;
-    }
 };
 
 struct ROBEntry {
@@ -77,6 +74,7 @@ struct RSEntry {
     int A; // for lw-sw, first imm then actual address
     int rob_tag;
     bool busy = false; // validates the RSEntry and checks if dispacted for LSQ
+    
 };
 
 

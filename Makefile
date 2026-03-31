@@ -24,21 +24,27 @@
 # # 	$(FILE)
 # 	@echo "Preprocessing complete."
 
+# Compiler settings
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 
+# Directories and files
+SRC_DIR = src
+TARGET = main
+
+# Automatically find all .cpp files in the src/ directory
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+
+# Default target when you just run 'make'
+all: compile
+
+# Target to compile the simulator
 compile:
 	@echo "Compiling simulator..."
-	$(CXX) $(CXXFLAGS) $(FILE) -o main
-	@echo "Build successful, 'main' executable created."
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET)
+	@echo "Build successful, '$(TARGET)' executable created."
 
-run:
-	@echo "Building C++ preprocessor..."
-	$(CXX) $(CXXFLAGS) Preprocessor.cpp -o preprocessor
-	@echo "Preprocessing $(FILE)..."
-	./preprocessor $(FILE)
-	@echo "Preprocessing complete."
-
+# Target to clean up the compiled executable
 clean:
-	rm -f main preprocessor
-	@echo "Cleaned up executable files."
+	@echo "Cleaning up..."
+	rm -f $(TARGET)
