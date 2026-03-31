@@ -21,6 +21,7 @@ struct ProcessorConfig {
     int rob_size = 64;
     int mem_size = 1024;
 
+    int logic_lat = 1;
     int add_lat = 2;
     int mul_lat = 4;
     int div_lat = 5;
@@ -28,6 +29,7 @@ struct ProcessorConfig {
     // int br_lat = ??;
     // int logic_lat = ??;
 
+    int logic_rs_size = 4;
     int adder_rs_size = 4;
     int mult_rs_size = 2;
     int div_rs_size = 2;
