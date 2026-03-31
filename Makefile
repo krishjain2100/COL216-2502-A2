@@ -26,7 +26,7 @@
 
 # Compiler settings
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall
+CXXFLAGS = -std=c++17 -Wall -g -Iinclude
 
 # Directories and files
 SRC_DIR = src
@@ -41,7 +41,7 @@ all: compile
 # Target to compile the simulator
 compile:
 	@echo "Compiling simulator..."
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET)
+	@ $(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET)
 	@echo "Build successful, '$(TARGET)' executable created."
 
 # Target to clean up the compiled executable

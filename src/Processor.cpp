@@ -19,6 +19,14 @@ Processor::Processor(ProcessorConfig& config) {
     eus[UnitType::BRANCH] = ExecutionUnit(config.br_lat, config.br_rs_size);
     eus[UnitType::LOGIC] = ExecutionUnit(config.logic_lat, config.logic_rs_size);
     LSQ = LoadStoreQueue(config.lsq_rs_size, config.mem_lat);
+
+    setupLogging();
+}
+
+Processor::~Processor() {
+    if (log_file.is_open()) {
+        log_file.close();
+    }
 }
 
 void Processor::loadProgram(const std::string& filename) {
@@ -35,10 +43,23 @@ bool Processor::isBranchInstruction(OpCode &op) const {
 }
 
 void Processor::stageFetch() {
-    if(ROB.isFull()) current_ins = nullptr;
+    if (current_ins != nullptr) {
+        return;
+    }
+    if (next_pc >= pc_limit) {
+        current_ins = nullptr;
+        return;
+    }
+    if(ROB.isFull()) {
+        current_ins = nullptr;
+        return;
+    }
     pc = next_pc;
     current_ins = &inst_memory[pc];
-    if(isBranchInstruction(current_ins->op)) {
+    if(current_ins->op == OpCode::J) {
+        next_pc = current_ins->imm;
+    }
+    else if(isBranchInstruction(current_ins->op)) {
         next_pc = bp.predict(pc, current_ins->imm);
     }
     else {
@@ -74,6 +95,10 @@ UnitType Processor::getUnitForOpcode(const OpCode op) const {
 }
 
 bool Processor::stageDecode() {
+    if (current_ins == nullptr) {
+        return false;
+    }
+
     if (ROB.isFull()) {
         return false; // stall
     }
@@ -91,6 +116,24 @@ bool Processor::stageDecode() {
     int Qk = (current_ins->src2 >= 0) ? RAT[current_ins->src2] : -1;
     int Vj = (Qj == -1 and current_ins->src1 >= 0) ? ARF[current_ins->src1] : -1;
     int Vk = (Qk == -1 and current_ins->src2 >= 0) ? ARF[current_ins->src2] : -1;
+
+    if (Qj != -1) {
+        if (!ROB.buffer[Qj].busy) { 
+            Vj = ROB.buffer[Qj].value;
+            Qj = -1;
+        }
+    } else if (current_ins->src1 >= 0) {
+        Vj = ARF[current_ins->src1];
+    }
+
+    if (Qk != -1) {
+        if (!ROB.buffer[Qk].busy) {
+            Vk = ROB.buffer[Qk].value;
+            Qk = -1;
+        }
+    } else if (current_ins->src2 >= 0) {
+        Vk = ARF[current_ins->src2];
+    }
 
 
     RSEntry rs_entry;
@@ -123,30 +166,40 @@ bool Processor::stageDecode() {
 
     if(current_ins->dest > 0) {
         RAT[current_ins->dest] = tag;
+        
     }
+
+    current_ins = nullptr;
 
     return true; 
 };
 
 void Processor::stageExecuteAndBroadcast() {
+    for(auto & [type, eu] : eus) {
+        eu.dispatch();
+    }
+    LSQ.dispatch();
+
     for (auto& [type, eu] : eus) {
         eu.executeCycle();
     }
     LSQ.executeCycle(Memory);
 
+    std::vector<Broadcast> to_broadcast;
+
     for(auto &[type, eu] : eus) {
         for (auto& bc : eu.ready_to_broadcast) {
-            bus.broadcast(bc.tag, bc.value, bc.exception);
-            for (auto& [t, inner_eu] : eus) {
-                inner_eu.rs.listen(bus);
-            }
-            LSQ.listen(bus);
-            ROB.listen(bus);
+            to_broadcast.push_back(bc);
         }
-        eu.ready_to_broadcast.clear(); 
+        eu.ready_to_broadcast.clear();
     }
 
     for (auto& bc : LSQ.ready_to_broadcast) {
+        to_broadcast.push_back(bc);
+    }
+    LSQ.ready_to_broadcast.clear();
+
+    for (auto& bc : to_broadcast) {
         bus.broadcast(bc.tag, bc.value, bc.exception);
         for (auto& [t, inner_eu] : eus) {
             inner_eu.rs.listen(bus);
@@ -154,13 +207,12 @@ void Processor::stageExecuteAndBroadcast() {
         LSQ.listen(bus);
         ROB.listen(bus);
     }
-    LSQ.ready_to_broadcast.clear();
+
     bus.clear();
 };
 
 void Processor::stageCommit() {
-    if (ROB.isEmpty()) return;
-
+    if(ROB.isEmpty()) return;
     ROBEntry &head = ROB.buffer[ROB.left];
 
     if (head.busy) return; // stall
@@ -177,24 +229,39 @@ void Processor::stageCommit() {
         bool actually_taken = (head.value == 1);
         int correct_pc;
         if (actually_taken) {
-            correct_pc = head.ins.pc + head.ins.imm;
+            correct_pc =  head.ins.imm;
         } else {
             correct_pc = head.ins.pc + 1;
         }
 
-        if (head.predicted_pc != correct_pc) {
-            bp.update(head.ins.pc, actually_taken, false, head.ins.op); 
-            pc = head.ins.pc;
-            next_pc = correct_pc;
-            flush();         
-            return;
-        } else {
-            bp.update(head.ins.pc, actually_taken, true, head.ins.op);
+        if (head.ins.op == OpCode::J) {
+             if (head.predicted_pc != correct_pc) {
+                 next_pc = correct_pc;
+                 flush();
+                 return;
+             }
         }
+
+        else {
+            if (head.predicted_pc != correct_pc) {
+                bp.update(head.ins.pc, actually_taken, false, head.ins.op); 
+                pc = head.ins.pc;
+                next_pc = correct_pc;
+                flush();         
+                return;
+            } else {
+                bp.update(head.ins.pc, actually_taken, true, head.ins.op);
+            }
+
+        }
+        
     }
 
     if (head.dest > 0) {
         ARF[head.dest] = head.value;
+        if (RAT[head.dest] == ROB.left) {
+            RAT[head.dest] = -1; 
+        }
     }
 
     if (head.ins.op == OpCode::SW) {
@@ -220,12 +287,18 @@ void Processor::flush() {
 };
 
 bool Processor::step() { 
+    if (exception) return false; 
     clock_cycle++;
-    stageFetch();
-    stageDecode();
-    stageExecuteAndBroadcast();
     stageCommit();
-    if(next_pc >= pc_limit) return false;
+    stageExecuteAndBroadcast();
+    stageDecode();
+    stageFetch();
+
+    logCycleState();
+
+    if(next_pc >= pc_limit && ROB.isEmpty()) {
+        return false;
+    }
     return true;
 }
 
@@ -239,4 +312,89 @@ void Processor::dumpArchitecturalState() {
         std::cout << "EXCEPTION raised by instruction " << pc + 1 << std::endl;
     }
     std::cout << "Branch Predictor Stats: " << bp.correct_predictions << "/" << bp.total_branches << " correct.\n";
+}
+
+
+void Processor::setupLogging() {
+    namespace fs = std::filesystem;
+    
+    if (!fs::exists("logs")) {
+        fs::create_directory("logs");
+    }
+
+    auto now = std::chrono::system_clock::now();
+    auto in_time_t = std::chrono::system_clock::to_time_t(now);
+    
+    std::stringstream ss;
+    ss << "logs/run_" << std::put_time(std::localtime(&in_time_t), "%Y%m%d_%H%M%S") << ".log";
+    std::string filename = ss.str();
+
+    log_file.open(filename);
+    if (log_file.is_open()) {
+        log_file << "Simulation started at: " << filename << "\n";
+    }
+}
+
+void Processor::logCycleState() {
+    if (!log_file.is_open()) return;
+
+    log_file << "\n" << std::string(50, '=') << "\n";
+    log_file << "CYCLE: " << clock_cycle << " | PC: " << pc << " | Next PC: " << next_pc << "\n";
+    log_file << std::string(50, '-') << "\n";
+
+    // 2. Log ROB Status to file
+    log_file << "REORDER BUFFER (Head: " << ROB.left << ", Tail: " << ROB.right << "):\n";
+    if (ROB.isEmpty()) {
+        log_file << "  [Empty]\n";
+    } else {
+        int i = ROB.left;
+        while (true) {
+            ROBEntry &e = ROB.buffer[i];
+            log_file << "  Tag " << i << " | Busy: " << (e.busy ? "Yes" : "No ") 
+                      << " | Inst: " << opMapRev.at(e.ins.op) << " | Dest: x" << e.dest 
+                      << " | Value: " << e.value << "\n";
+            
+            i = (i + 1) % ROB.rob_size;
+            if (i == ROB.right) break;
+        }
+    }
+
+    // 3. Log Reservation Stations to file
+    log_file << "\nRESERVATION STATIONS:\n";
+    for (auto& [type, eu] : eus) {
+        log_file << "  Unit " << static_cast<int>(type) << " (Size: " << eu.rs.sz << "):\n";
+        for (auto& entry : eu.rs.entries) {
+            if (entry.busy) {
+                log_file << "    [Tag " << entry.rob_tag << "] Op: " << opMapRev.at(entry.op)
+                          << " | Qj: " << entry.Qj << " | Qk: " << entry.Qk 
+                          << " | Vj: " << entry.Vj << " | Vk: " << entry.Vk << "\n";
+            }
+        }
+    }
+
+    // 4. Log LSQ to file
+    log_file << "\nLOAD/STORE QUEUE:\n";
+    if (LSQ.lsq.empty()) {
+        log_file << "  [Empty]\n";
+    } else {
+        for (auto& entry : LSQ.lsq) {
+            log_file << "    [Tag " << entry.rob_tag << "] Op: " << opMapRev.at(entry.op)
+                      << " | Addr: " << entry.A << " | Busy: " << (entry.busy ? "Yes" : "No") << "\n";
+        }
+    }
+
+    // 5. Log RAT to file
+    log_file << "\nREGISTER ALIAS TABLE (RAT):\n  ";
+    bool rat_empty = true;
+    for (int i = 0; i < (int)RAT.size(); i++) {
+        if (RAT[i] != -1) {
+            log_file << "x" << i << "->Tag " << RAT[i] << " | ";
+            rat_empty = false;
+        }
+    }
+    if (rat_empty) log_file << "[All Clear]";
+    log_file << "\n" << std::string(50, '=') << "\n";
+    
+    // Optional: Force the data to be written to the disk immediately
+    log_file.flush(); 
 }

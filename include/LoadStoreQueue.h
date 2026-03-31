@@ -27,6 +27,7 @@ public:
     void pop();
 
     void flush();
+    void dispatch();
     void executeCycle(const std::vector<int>& Memory);
     void listen(const CDB& bus);
 };

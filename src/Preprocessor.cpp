@@ -58,14 +58,28 @@ bool preprocess(const std::string& filename) {
         std::istringstream iss(text);
         std::string op;
         iss >> op;
-        if (op == "j") { // Syntax: j label
+        if (op == "j") { // Syntax: j label or j target
             std::string target;
             iss >> target;
-			output.push_back("j " + std::to_string(label_pc[target]));
-        } else if (branch_ops.count(op)) { // Syntax:  op rs1, rs2, label
-            size_t last_comma = text.rfind(',');
-            std::string target = trim(text.substr(last_comma + 1));
-			output.push_back(text.substr(0, last_comma + 1) + " " + std::to_string(label_pc[target])); 
+            bool is_numeric = !target.empty() && std::isdigit(target[0]);
+            if (is_numeric) {
+                output.push_back("j " + target);
+            } else {
+                output.push_back("j " + std::to_string(label_pc[target]));
+            }
+        } else if (branch_ops.count(op)) { // Syntax:  op rs1, rs2, label or op rs1, rs2, target
+            size_t last_delim = text.find_last_of(", \t");
+            if (last_delim != std::string::npos) {
+                std::string target = trim(text.substr(last_delim + 1));
+                bool is_numeric = !target.empty() && std::isdigit(target[0]);
+                if (is_numeric) {
+                    output.push_back(text.substr(0, last_delim + 1) + target);
+                } else {
+                    output.push_back(text.substr(0, last_delim + 1) + std::to_string(label_pc[target]));
+                }
+            } else {
+                output.push_back(text);
+            }
         } else {
             output.push_back(text);
         }
@@ -77,8 +91,10 @@ bool preprocess(const std::string& filename) {
         return false;
     }
 
-    for (const auto &l : output)
-        outfile << l << std::endl;
+    for (size_t i = 0; i < output.size(); ++i) {
+        outfile << output[i];
+        if (i + 1 < output.size()) outfile << '\n';
+    }
 
     return true;
 }

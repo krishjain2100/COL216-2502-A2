@@ -7,7 +7,7 @@
 enum class OpCode { ADD, SUB, ADDI, MUL, DIV, REM, LW, SW, BEQ, BNE, BLT, BLE, J, SLT, SLTI, AND, OR, XOR, ANDI, ORI, XORI };
 enum class UnitType { ADDER, MULTIPLIER, DIVIDER, LOADSTORE, BRANCH, LOGIC };
 
-inline const std::vector<OpCode> branchOp = {OpCode::BEQ, OpCode::BNE, OpCode::BLT, OpCode::BNE};
+inline const std::vector<OpCode> branchOp = {OpCode::BEQ, OpCode::BNE, OpCode::BLT, OpCode::BLE, OpCode::J};
 inline const std::map<std::string, OpCode> opMap = {
     {"add",  OpCode::ADD},  {"sub",  OpCode::SUB},  {"slt",  OpCode::SLT},
     {"addi", OpCode::ADDI},  {"slti", OpCode::SLTI},
@@ -16,6 +16,13 @@ inline const std::map<std::string, OpCode> opMap = {
     {"andi", OpCode::ANDI},  {"ori",  OpCode::ORI},   {"xori", OpCode::XORI},
     {"lw",   OpCode::LW},    {"sw",   OpCode::SW},  {"j",    OpCode::J},
     {"beq",  OpCode::BEQ},  {"bne",  OpCode::BNE}, {"blt",  OpCode::BLT},  {"ble",  OpCode::BLE},
+};
+
+inline const std::map<OpCode, std::string> opMapRev = {
+    {OpCode::ADD, "add"}, {OpCode::SUB, "sub"}, {OpCode::MUL, "mul"},
+    {OpCode::DIV, "div"}, {OpCode::LW, "lw"}, {OpCode::SW, "sw"},
+    {OpCode::BEQ, "beq"}, {OpCode::BNE, "bne"}, {OpCode::ADDI, "addi"},
+    {OpCode::J, "j"}, {OpCode::BLT, "blt"}, {OpCode::BLE, "ble"}
 };
 
 struct Instruction {
@@ -37,7 +44,7 @@ struct ProcessorConfig {
     int mul_lat = 4;
     int div_lat = 5;
     int mem_lat = 4;
-    int br_lat = 1; 
+    int br_lat = 2; 
 
     int logic_rs_size = 4;
     int adder_rs_size = 4;

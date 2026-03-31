@@ -5,7 +5,7 @@
 Parser::Parser(std::ifstream &file, std::vector<Instruction> &inst_memory, std::vector<int> &Memory) {
     std::vector<std::string> lines;
     for (std::string l; getline(file, l);)
-        lines.push_back(stripComment(l));
+        lines.push_back(trim(stripComment(l)));
 
     std::map<std::string, int> mem_labels; // e.g. "A" → 0,  "B" → 3
     int ptr = 0;

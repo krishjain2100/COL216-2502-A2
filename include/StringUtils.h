@@ -26,11 +26,16 @@ inline std::pair<std::string, std::string> extractLabel(const std::string &line)
     return {label, trim(line.substr(colon + 1))};
 }
 
-inline std::vector<std::string> splitComma(const std::string &s) {
+inline std::vector<std::string> splitComma(std::string s) {
+    for (char &c : s) {
+        if (c == ',') c = ' ';
+    }
     std::vector<std::string> out;
     std::stringstream ss(s);
     std::string tok;
-    while (getline(ss, tok, ',')) out.push_back(trim(tok));
+    while (ss >> tok) {
+        out.push_back(tok); 
+    }
     return out;
 }
 

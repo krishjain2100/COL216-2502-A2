@@ -42,6 +42,29 @@ void LoadStoreQueue::pop() {
     lsq.pop_front();
 }
 
+void LoadStoreQueue::dispatch() {
+    bool pending_sw = false;
+    for (auto& entry : lsq) {
+        if (entry.op == OpCode::SW) {
+            pending_sw = true;
+        }
+
+        if (!entry.busy) {
+            if (entry.Qj == -1 && entry.Qk == -1) {
+                if (entry.op == OpCode::LW && pending_sw) {
+                    continue; 
+                }
+                LSQInPipeline new_op;
+                new_op.cycles_remaining = latency;
+                new_op.parent = &entry;
+                inPipetIns.push_back(new_op);
+                entry.busy = true; 
+            }
+            break; 
+        }
+    }
+}
+
 void LoadStoreQueue::executeCycle(const std::vector<int>& Memory) {
     for (auto it = inPipetIns.begin(); it != inPipetIns.end(); ) {
         it->cycles_remaining--;
@@ -66,21 +89,6 @@ void LoadStoreQueue::executeCycle(const std::vector<int>& Memory) {
         } 
         else {
             it++;
-        }
-    }
-
-    if (!lsq.empty()) {
-        for (auto& entry : lsq) {
-            if (!entry.busy) {
-                if (entry.Qj == -1 && entry.Qk == -1) {
-                    LSQInPipeline new_op;
-                    new_op.cycles_remaining = latency;
-                    new_op.parent = &entry;
-                    inPipetIns.push_back(new_op);
-                    entry.busy = true; 
-                }
-                break; 
-            }
         }
     }
 }

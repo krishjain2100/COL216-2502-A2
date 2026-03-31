@@ -8,7 +8,7 @@ inline constexpr long long NEGINF = -2147483648LL;
 
 struct RSInPipeline {
     int cycles_remaining;
-    RSEntry *parent;
+    RSEntry data;
 };
 
 class ExecutionUnit {
@@ -23,6 +23,7 @@ public:
     ExecutionUnit(int _latency, int rs_size);
 
     void flush();
+    void dispatch();
     void executeCycle();
 };
 

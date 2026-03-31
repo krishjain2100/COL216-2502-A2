@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     Processor cpu = Processor(config);
     
     try {
-        cpu.loadProgram(argv[1]);
+        cpu.loadProgram(filename);
     } catch (...) {
         std::cerr << "Failed to parse instruction file.\n";
         return 1;

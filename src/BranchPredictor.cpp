@@ -1,8 +1,7 @@
 #include "../include/BranchPredictor.h"
 
-
 int BranchPredictor::predict(int current_pc, int imm) { 
-        int state = states[current_pc];
+        int &state = states[current_pc];
         int new_pc;
         if(state & 2) new_pc = current_pc + 1;
         else new_pc = current_pc + imm;
@@ -14,7 +13,7 @@ void BranchPredictor::update(int current_pc, bool taken, bool was_correct, OpCod
     if (was_correct) {
         correct_predictions++;
     }
-    int state = states[current_pc];
+    int &state = states[current_pc];
     if(state >= 1 and taken) {
         state--;
     }
