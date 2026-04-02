@@ -26,7 +26,7 @@
 
 # Compiler settings
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -g -Iinclude
+CXXFLAGS = -std=c++17 -Wall -Iinclude
 
 # Directories and files
 SRC_DIR = src

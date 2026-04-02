@@ -3,8 +3,8 @@
 int BranchPredictor::predict(int current_pc, int imm) { 
         int &state = states[current_pc];
         int new_pc;
-        if(state & 2) new_pc = current_pc + 1;
-        else new_pc = current_pc + imm;
+        if(state & 2) new_pc = current_pc + 1; // not taken
+        else new_pc = imm; // taken
         return new_pc;
     }
 

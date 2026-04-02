@@ -31,6 +31,7 @@ void ReservationStation::clear() {
     for(auto &e: entries) {
         e.busy = false;
     }
+    sz = 0;
 }
 
 void ReservationStation::listen(const CDB& bus) {

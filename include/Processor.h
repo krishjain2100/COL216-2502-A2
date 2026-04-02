@@ -52,7 +52,7 @@ public:
     UnitType getUnitForOpcode(const OpCode op) const;
 
     void stageFetch();
-    bool stageDecode();
+    void stageDecode();
     void stageExecuteAndBroadcast();
     void stageCommit();
     void flush();

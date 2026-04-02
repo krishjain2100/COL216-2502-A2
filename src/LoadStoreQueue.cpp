@@ -43,25 +43,16 @@ void LoadStoreQueue::pop() {
 }
 
 void LoadStoreQueue::dispatch() {
-    bool pending_sw = false;
     for (auto& entry : lsq) {
-        if (entry.op == OpCode::SW) {
-            pending_sw = true;
+        if(entry.busy) continue;
+        if (entry.Qj == -1 && entry.Qk == -1) {
+            LSQInPipeline new_op;
+            new_op.cycles_remaining = latency;
+            new_op.parent = &entry;
+            inPipetIns.push_back(new_op);
+            entry.busy = true; 
         }
-
-        if (!entry.busy) {
-            if (entry.Qj == -1 && entry.Qk == -1) {
-                if (entry.op == OpCode::LW && pending_sw) {
-                    continue; 
-                }
-                LSQInPipeline new_op;
-                new_op.cycles_remaining = latency;
-                new_op.parent = &entry;
-                inPipetIns.push_back(new_op);
-                entry.busy = true; 
-            }
-            break; 
-        }
+        break;
     }
 }
 

@@ -12,13 +12,12 @@ Processor::Processor(ProcessorConfig& config) {
     ROB.rob_size = config.rob_size;
     ROB.buffer.resize(config.rob_size);
 
-    // Instantiate Hardware Units
     eus[UnitType::ADDER] = ExecutionUnit(config.add_lat, config.adder_rs_size);
     eus[UnitType::MULTIPLIER] = ExecutionUnit(config.mul_lat, config.mult_rs_size);
     eus[UnitType::DIVIDER] = ExecutionUnit(config.div_lat, config.div_rs_size);
     eus[UnitType::BRANCH] = ExecutionUnit(config.br_lat, config.br_rs_size);
     eus[UnitType::LOGIC] = ExecutionUnit(config.logic_lat, config.logic_rs_size);
-    LSQ = LoadStoreQueue(config.lsq_rs_size, config.mem_lat);
+    LSQ = LoadStoreQueue(config.mem_lat, config.lsq_rs_size);
 
     setupLogging();
 }
@@ -94,21 +93,16 @@ UnitType Processor::getUnitForOpcode(const OpCode op) const {
     }
 }
 
-bool Processor::stageDecode() {
-    if (current_ins == nullptr) {
-        return false;
-    }
-
-    if (ROB.isFull()) {
-        return false; // stall
-    }
+void Processor::stageDecode() {
+    if (current_ins == nullptr) return;
+    if (ROB.isFull()) return;
 
     UnitType unit = getUnitForOpcode(current_ins->op); 
 
     if (unit == UnitType::LOADSTORE) {
-        if (LSQ.isFull()) return false; 
+        if (LSQ.isFull()) return; 
     } else {
-        if (eus[unit].rs.isFull()) return false; 
+        if (eus[unit].rs.isFull()) return; 
     }
 
     int tag = ROB.getNextTag();
@@ -122,8 +116,6 @@ bool Processor::stageDecode() {
             Vj = ROB.buffer[Qj].value;
             Qj = -1;
         }
-    } else if (current_ins->src1 >= 0) {
-        Vj = ARF[current_ins->src1];
     }
 
     if (Qk != -1) {
@@ -131,10 +123,7 @@ bool Processor::stageDecode() {
             Vk = ROB.buffer[Qk].value;
             Qk = -1;
         }
-    } else if (current_ins->src2 >= 0) {
-        Vk = ARF[current_ins->src2];
     }
-
 
     RSEntry rs_entry;
     rs_entry.unit = unit;
@@ -166,12 +155,9 @@ bool Processor::stageDecode() {
 
     if(current_ins->dest > 0) {
         RAT[current_ins->dest] = tag;
-        
     }
 
-    current_ins = nullptr;
-
-    return true; 
+    current_ins = nullptr; 
 };
 
 void Processor::stageExecuteAndBroadcast() {
@@ -201,8 +187,8 @@ void Processor::stageExecuteAndBroadcast() {
 
     for (auto& bc : to_broadcast) {
         bus.broadcast(bc.tag, bc.value, bc.exception);
-        for (auto& [t, inner_eu] : eus) {
-            inner_eu.rs.listen(bus);
+        for (auto& [t, eu] : eus) {
+            eu.rs.listen(bus);
         }
         LSQ.listen(bus);
         ROB.listen(bus);
@@ -215,7 +201,7 @@ void Processor::stageCommit() {
     if(ROB.isEmpty()) return;
     ROBEntry &head = ROB.buffer[ROB.left];
 
-    if (head.busy) return; // stall
+    if (head.busy) return; 
 
     if (head.exception) {
         pc = head.ins.pc; 
@@ -229,7 +215,7 @@ void Processor::stageCommit() {
         bool actually_taken = (head.value == 1);
         int correct_pc;
         if (actually_taken) {
-            correct_pc =  head.ins.imm;
+            correct_pc = head.ins.imm;
         } else {
             correct_pc = head.ins.pc + 1;
         }

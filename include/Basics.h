@@ -80,7 +80,7 @@ struct RSEntry {
     int Vk;
     int A; // for lw-sw, first imm then actual address
     int rob_tag;
-    bool busy = false; // validates the RSEntry and checks if dispacted for LSQ
+    bool busy = false; // validates the RSEntry and checks if dispatched from LSQ
     
 };
 
