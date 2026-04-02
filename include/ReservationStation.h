@@ -15,7 +15,7 @@ public:
 	bool isFull() const;
 	bool isEmpty() const;
 
-	void insert(RSEntry &entry);
+	void insert(const RSEntry &entry);
 	void clear();
 	
 	void listen(const CDB& bus);

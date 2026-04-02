@@ -44,7 +44,7 @@ struct ProcessorConfig {
     int mul_lat = 4;
     int div_lat = 5;
     int mem_lat = 4;
-    int br_lat = 2; 
+    int br_lat = 2; // not mentioned
 
     int logic_rs_size = 4;
     int adder_rs_size = 4;

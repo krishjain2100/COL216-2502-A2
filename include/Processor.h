@@ -18,38 +18,36 @@
 
 class Processor {
 public:
-    int pc;
+    int pc = 0;
     int next_pc;
     int pc_limit;
-    int clock_cycle;
+    int clock_cycle = 0;
+    bool exception = false; 
+
+    Instruction* current_ins = nullptr;
 
     std::vector<Instruction> inst_memory;
     std::vector<RSEntry> ready_for_execution;
     
     std::vector<int> ARF; 
     std::vector<int> Memory; 
-    bool exception = false; 
-
-    std::map <UnitType, ExecutionUnit> eus;
     std::vector<int> RAT;
+    std::map <UnitType, ExecutionUnit> EUS;
 
     ReorderBuffer ROB;
     LoadStoreQueue LSQ;
-    CDB bus;
-    BranchPredictor bp;
-
-    Instruction* current_ins = nullptr;
-
+    CDB BUS;
+    BranchPredictor BP;
 
     std::ofstream log_file;
 
     
     Processor(ProcessorConfig& config);
     ~Processor();
-    void loadProgram(const std::string& filename);
+    void loadProgram(const std::string &filename);
 
-    bool isBranchInstruction(OpCode &op) const;
-    UnitType getUnitForOpcode(const OpCode op) const;
+    bool isBranchInstruction(const OpCode &op) const;
+    UnitType getUnitForOpcode(const OpCode &op) const;
 
     void stageFetch();
     void stageDecode();
@@ -57,7 +55,7 @@ public:
     void stageCommit();
     void flush();
     bool step();
-    void dumpArchitecturalState();
+    void dumpArchitecturalState() const;
     void setupLogging();
     void logCycleState();
 };

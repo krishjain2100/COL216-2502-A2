@@ -16,7 +16,7 @@ bool ReservationStation::isEmpty() const {
     return !sz;
 }
 
-void ReservationStation::insert(RSEntry &entry) {
+void ReservationStation::insert(const RSEntry &entry) {
     if(isFull()) return;
     for(auto &e : entries) {
         if(!e.busy) {

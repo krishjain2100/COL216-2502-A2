@@ -12,11 +12,11 @@ Processor::Processor(ProcessorConfig& config) {
     ROB.rob_size = config.rob_size;
     ROB.buffer.resize(config.rob_size);
 
-    eus[UnitType::ADDER] = ExecutionUnit(config.add_lat, config.adder_rs_size);
-    eus[UnitType::MULTIPLIER] = ExecutionUnit(config.mul_lat, config.mult_rs_size);
-    eus[UnitType::DIVIDER] = ExecutionUnit(config.div_lat, config.div_rs_size);
-    eus[UnitType::BRANCH] = ExecutionUnit(config.br_lat, config.br_rs_size);
-    eus[UnitType::LOGIC] = ExecutionUnit(config.logic_lat, config.logic_rs_size);
+    EUS[UnitType::ADDER] = ExecutionUnit(config.add_lat, config.adder_rs_size);
+    EUS[UnitType::MULTIPLIER] = ExecutionUnit(config.mul_lat, config.mult_rs_size);
+    EUS[UnitType::DIVIDER] = ExecutionUnit(config.div_lat, config.div_rs_size);
+    EUS[UnitType::BRANCH] = ExecutionUnit(config.br_lat, config.br_rs_size);
+    EUS[UnitType::LOGIC] = ExecutionUnit(config.logic_lat, config.logic_rs_size);
     LSQ = LoadStoreQueue(config.mem_lat, config.lsq_rs_size);
 
     setupLogging();
@@ -34,7 +34,7 @@ void Processor::loadProgram(const std::string& filename) {
     pc_limit = inst_memory.size();
 }
 
-bool Processor::isBranchInstruction(OpCode &op) const {
+bool Processor::isBranchInstruction(const OpCode &op) const {
     for(auto &o : branchOp) {
         if(o == op) return true;
     }
@@ -59,14 +59,14 @@ void Processor::stageFetch() {
         next_pc = current_ins->imm;
     }
     else if(isBranchInstruction(current_ins->op)) {
-        next_pc = bp.predict(pc, current_ins->imm);
+        next_pc = BP.predict(pc, current_ins->imm);
     }
     else {
         next_pc = pc + 1;
     }
 };
 
-UnitType Processor::getUnitForOpcode(const OpCode op) const { 
+UnitType Processor::getUnitForOpcode(const OpCode &op) const { 
     switch(op) {
         case OpCode::ADD: return UnitType::ADDER;
         case OpCode::SUB: return UnitType::ADDER;
@@ -97,12 +97,27 @@ void Processor::stageDecode() {
     if (current_ins == nullptr) return;
     if (ROB.isFull()) return;
 
+    // if (current_ins->op == OpCode::J) {
+    //     ROBEntry rb_entry;
+    //     rb_entry.busy = false; 
+    //     rb_entry.ins = *current_ins;
+    //     rb_entry.dest = -1;
+    //     rb_entry.value = 1;
+    //     rb_entry.exception = false;
+    //     rb_entry.mispredicted = false;
+    //     rb_entry.predicted_pc = next_pc;
+
+    //     ROB.insert(rb_entry);
+    //     current_ins = nullptr;
+    //     return; 
+    // }
+
     UnitType unit = getUnitForOpcode(current_ins->op); 
 
     if (unit == UnitType::LOADSTORE) {
         if (LSQ.isFull()) return; 
     } else {
-        if (eus[unit].rs.isFull()) return; 
+        if (EUS[unit].rs.isFull()) return; 
     }
 
     int tag = ROB.getNextTag();
@@ -140,7 +155,7 @@ void Processor::stageDecode() {
     rb_entry.busy = true;
     rb_entry.ins = *current_ins;
     rb_entry.dest = current_ins->dest;
-    rb_entry.value = 0;      // Placeholder, calculated later   
+    rb_entry.value = 0;  // Placeholder, calculated later   
     rb_entry.exception = false;
     rb_entry.mispredicted = false;
     rb_entry.predicted_pc = next_pc;
@@ -148,7 +163,7 @@ void Processor::stageDecode() {
     if (unit == UnitType::LOADSTORE) {
         LSQ.insert(rs_entry);
     } else {
-        eus[unit].rs.insert(rs_entry);
+        EUS[unit].rs.insert(rs_entry);
     }
 
     ROB.insert(rb_entry);
@@ -161,19 +176,19 @@ void Processor::stageDecode() {
 };
 
 void Processor::stageExecuteAndBroadcast() {
-    for(auto & [type, eu] : eus) {
+    for(auto & [type, eu] : EUS) {
         eu.dispatch();
     }
     LSQ.dispatch();
 
-    for (auto& [type, eu] : eus) {
+    for (auto& [type, eu] : EUS) {
         eu.executeCycle();
     }
     LSQ.executeCycle(Memory);
 
     std::vector<Broadcast> to_broadcast;
 
-    for(auto &[type, eu] : eus) {
+    for(auto &[type, eu] : EUS) {
         for (auto& bc : eu.ready_to_broadcast) {
             to_broadcast.push_back(bc);
         }
@@ -186,15 +201,15 @@ void Processor::stageExecuteAndBroadcast() {
     LSQ.ready_to_broadcast.clear();
 
     for (auto& bc : to_broadcast) {
-        bus.broadcast(bc.tag, bc.value, bc.exception);
-        for (auto& [t, eu] : eus) {
-            eu.rs.listen(bus);
+        BUS.broadcast(bc.tag, bc.value, bc.exception);
+        for (auto& [t, eu] : EUS) {
+            eu.rs.listen(BUS);
         }
-        LSQ.listen(bus);
-        ROB.listen(bus);
+        LSQ.listen(BUS);
+        ROB.listen(BUS);
     }
 
-    bus.clear();
+    BUS.clear();
 };
 
 void Processor::stageCommit() {
@@ -206,7 +221,7 @@ void Processor::stageCommit() {
     if (head.exception) {
         pc = head.ins.pc; 
         exception = true;        
-        flush();            
+        flush();  
         return;                
     }
 
@@ -220,7 +235,7 @@ void Processor::stageCommit() {
             correct_pc = head.ins.pc + 1;
         }
 
-        if (head.ins.op == OpCode::J) {
+         if (head.ins.op == OpCode::J) {
              if (head.predicted_pc != correct_pc) {
                  next_pc = correct_pc;
                  flush();
@@ -230,13 +245,13 @@ void Processor::stageCommit() {
 
         else {
             if (head.predicted_pc != correct_pc) {
-                bp.update(head.ins.pc, actually_taken, false, head.ins.op); 
+                BP.update(head.ins.pc, actually_taken, false, head.ins.op); 
                 pc = head.ins.pc;
                 next_pc = correct_pc;
                 flush();         
                 return;
             } else {
-                bp.update(head.ins.pc, actually_taken, true, head.ins.op);
+                BP.update(head.ins.pc, actually_taken, true, head.ins.op);
             }
 
         }
@@ -262,13 +277,13 @@ void Processor::stageCommit() {
 }
 
 void Processor::flush() {
-    for (auto& [type, eu] : eus) {
+    for (auto& [type, eu] : EUS) {
         eu.flush();
     }
     LSQ.flush();
     ROB.flush();
     for(auto &e : RAT) e = -1;
-    bus.clear();
+    BUS.clear();
     current_ins = nullptr;
 };
 
@@ -282,13 +297,13 @@ bool Processor::step() {
 
     logCycleState();
 
-    if(next_pc >= pc_limit && ROB.isEmpty()) {
+    if((next_pc >= pc_limit) and ROB.isEmpty()) {
         return false;
     }
     return true;
 }
 
-void Processor::dumpArchitecturalState() {
+void Processor::dumpArchitecturalState() const {
     std::cout << "\n=== ARCHITECTURAL STATE (CYCLE " << clock_cycle << ") ===\n";
     for (int i = 0; i < ARF.size(); i++) {
         std::cout << "x" << i << ": " << std::setw(4) << ARF[i] << " | ";
@@ -297,7 +312,7 @@ void Processor::dumpArchitecturalState() {
     if (exception) {
         std::cout << "EXCEPTION raised by instruction " << pc + 1 << std::endl;
     }
-    std::cout << "Branch Predictor Stats: " << bp.correct_predictions << "/" << bp.total_branches << " correct.\n";
+    std::cout << "Branch Predictor Stats: " << BP.correct_predictions << "/" << BP.total_branches << " correct.\n";
 }
 
 
@@ -347,7 +362,7 @@ void Processor::logCycleState() {
 
     // 3. Log Reservation Stations to file
     log_file << "\nRESERVATION STATIONS:\n";
-    for (auto& [type, eu] : eus) {
+    for (auto& [type, eu] : EUS) {
         log_file << "  Unit " << static_cast<int>(type) << " (Size: " << eu.rs.sz << "):\n";
         for (auto& entry : eu.rs.entries) {
             if (entry.busy) {

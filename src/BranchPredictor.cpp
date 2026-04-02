@@ -1,6 +1,6 @@
 #include "../include/BranchPredictor.h"
 
-int BranchPredictor::predict(int current_pc, int imm) { 
+int BranchPredictor::predict(const int &current_pc, const int &imm) { 
         int &state = states[current_pc];
         int new_pc;
         if(state & 2) new_pc = current_pc + 1; // not taken
@@ -8,7 +8,7 @@ int BranchPredictor::predict(int current_pc, int imm) {
         return new_pc;
     }
 
-void BranchPredictor::update(int current_pc, bool taken, bool was_correct, OpCode op) {
+void BranchPredictor::update(const int &current_pc, const bool &taken, const bool &was_correct, const OpCode &op) {
     total_branches++;
     if (was_correct) {
         correct_predictions++;
