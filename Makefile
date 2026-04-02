@@ -1,50 +1,63 @@
-# # Compiler and flags
-# CXX = g++
-# CXXFLAGS = -std=c++17 -Wall
 
-# # ==========================================
-# # make compile FILE=<filename.cpp>
-# # ==========================================
-# # This target should compile your files with the provided 
-# # main.cpp. The main.cpp will always #include "Processor.h" 
-# # and will have its own main() function.
-# compile:
-# 	@echo "Compiling simulator:"
-# 	$(CXX) $(CXXFLAGS) $(FILE) -o main
-# 	@echo "Build successful, 'main' created."
+### ------------------------------------------------------------###
+### ------------------------------------------------------------###
+### -------------------------  TESTING  ------------------------###
+### ------------------------------------------------------------###
+### ------------------------------------------------------------###
 
-# # ==========================================
-# # make run FILE=<filename.s>
-# # ==========================================
-# # Update this target to run whatever script or 
-# # program you wrote to preprocess the assembly labels. 
-# # Example below assumes a Python script named 'compiler.py'.
-# run:
-# 	@echo "Preprocessing $(FILE)..."
-# # 	$(FILE)
-# 	@echo "Preprocessing complete."
-
-# Compiler settings
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Iinclude
+CXXFLAGS = -std=c++17 -O3 -Wall -Iinclude
+SRCS = $(wildcard src/*.cpp)
+CORE_SRCS = $(filter-out src/main.cpp, $(SRCS))
 
-# Directories and files
-SRC_DIR = src
-TARGET = main
+.PHONY: compile test clean
 
-# Automatically find all .cpp files in the src/ directory
-SRCS = $(wildcard $(SRC_DIR)/*.cpp)
-
-# Default target when you just run 'make'
-all: compile
-
-# Target to compile the simulator
 compile:
-	@echo "Compiling simulator..."
-	@ $(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET)
-	@echo "Build successful, '$(TARGET)' executable created."
+	@echo "Compiling the processor..."
+	@$(CXX) $(CXXFLAGS) $(SRCS) -o main
+	@echo "Success!"
 
-# Target to clean up the compiled executable
+test: 
+	@if [ -z "$(FILE)" ]; then echo "Error: FILE argument is required. Usage: make test FILE=<filename.txt>"; exit 1; fi
+	@echo "Preprocessing..."
+	@echo '#include "Preprocessor.h"' > temp_prep.cpp
+	@echo 'int main(int argc, char** argv) { if(argc>1) return preprocess(argv[1]) ? 0 : 1; return 1; }' >> temp_prep.cpp
+	@$(CXX) $(CXXFLAGS) $(CORE_SRCS) temp_prep.cpp -o prep
+	@./prep $(FILE)
+	@rm -f prep temp_prep.cpp
+	@echo "Running..."
+	@./main $(FILE)
+
 clean:
-	@echo "Cleaning up..."
-	rm -f $(TARGET)
+	rm -f main prep temp_prep.cpp
+
+
+### ------------------------------------------------------------###
+### ------------------------------------------------------------###
+### -----------------------  SUBMISSION  -----------------------###
+### ------------------------------------------------------------###
+### ------------------------------------------------------------###
+
+# CXX = g++
+# CXXFLAGS = -std=c++17 -O3 -Wall -Iinclude
+# CORE_SRCS = $(filter-out src/main.cpp, $(wildcard src/*.cpp))
+
+# .PHONY: compile run clean
+
+# compile:
+# 	@if [ -z "$(FILE)" ]; then echo "Error: FILE argument is required. Usage: make compile FILE=<filename.cpp>"; exit 1; fi
+# 	@echo "Compiling processor alongside $(FILE)..."
+# 	@$(CXX) $(CXXFLAGS) $(CORE_SRCS) $(FILE) -o main
+# 	@echo "Successfully created executable: main"
+
+# run:
+# 	@if [ -z "$(FILE)" ]; then echo "Error: FILE argument is required. Usage: make run FILE=<filename.s>"; exit 1; fi
+# 	@echo "Preprocessing..."
+# 	@echo '#include "Preprocessor.h"' > temp_prep.cpp
+# 	@echo 'int main(int argc, char** argv) { if(argc>1) return preprocess(argv[1]) ? 0 : 1; return 1; }' >> temp_prep.cpp
+# 	@$(CXX) $(CXXFLAGS) $(CORE_SRCS) temp_prep.cpp -o prep
+# 	@./prep $(FILE)
+# 	@rm -f prep temp_prep.cpp
+
+# clean:
+# 	@rm -f main prep temp_prep.cpp

@@ -3,11 +3,10 @@
 #include <vector>
 #include <map>
 
-
 enum class OpCode { ADD, SUB, ADDI, MUL, DIV, REM, LW, SW, BEQ, BNE, BLT, BLE, J, SLT, SLTI, AND, OR, XOR, ANDI, ORI, XORI };
 enum class UnitType { ADDER, MULTIPLIER, DIVIDER, LOADSTORE, BRANCH, LOGIC };
 
-inline const std::vector<OpCode> branchOp = {OpCode::BEQ, OpCode::BNE, OpCode::BLT, OpCode::BLE, OpCode::J};
+inline const std::vector<OpCode> branchOp = {OpCode::BEQ, OpCode::BNE, OpCode::BLT, OpCode::BLE};
 inline const std::map<std::string, OpCode> opMap = {
     {"add",  OpCode::ADD},  {"sub",  OpCode::SUB},  {"slt",  OpCode::SLT},
     {"addi", OpCode::ADDI},  {"slti", OpCode::SLTI},
@@ -24,6 +23,40 @@ inline const std::map<OpCode, std::string> opMapRev = {
     {OpCode::BEQ, "beq"}, {OpCode::BNE, "bne"}, {OpCode::ADDI, "addi"},
     {OpCode::J, "j"}, {OpCode::BLT, "blt"}, {OpCode::BLE, "ble"}
 };
+
+inline UnitType getUnitForOpcode(const OpCode &op) { 
+    switch(op) {
+        case OpCode::ADD: return UnitType::ADDER;
+        case OpCode::SUB: return UnitType::ADDER;
+        case OpCode::ADDI: return UnitType::ADDER; 
+        case OpCode::MUL: return UnitType::MULTIPLIER;
+        case OpCode::DIV: return UnitType::DIVIDER;
+        case OpCode::REM: return UnitType::DIVIDER;
+        case OpCode::LW: return UnitType::LOADSTORE;
+        case OpCode::SW: return UnitType::LOADSTORE;
+        case OpCode::BEQ: return UnitType::BRANCH;
+        case OpCode::BNE: return UnitType::BRANCH;
+        case OpCode::BLT: return UnitType::BRANCH;
+        case OpCode::BLE: return UnitType::BRANCH;
+        case OpCode::J: return UnitType::BRANCH;
+        case OpCode::SLT: return UnitType::ADDER;
+        case OpCode::SLTI: return UnitType::ADDER;
+        case OpCode::AND: return UnitType::LOGIC;
+        case OpCode::OR: return UnitType::LOGIC;
+        case OpCode::XOR: return UnitType::LOGIC;
+        case OpCode::ANDI: return UnitType::LOGIC;
+        case OpCode::ORI: return UnitType::LOGIC;
+        case OpCode::XORI: return UnitType::LOGIC;
+        default: throw;
+    }
+}
+
+inline bool isBranchInstruction(const OpCode &op) {
+    for(auto &o : branchOp) {
+        if(o == op) return true;
+    }
+    return false;
+}
 
 struct Instruction {
     OpCode op;
@@ -67,7 +100,6 @@ struct ROBEntry {
    int dest; // reg number
    int value; 
    bool exception = false;
-   bool mispredicted = false;
    int predicted_pc = 0;
 };
 

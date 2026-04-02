@@ -5,6 +5,7 @@ Processor::Processor(ProcessorConfig& config) {
     pc = 0;
     next_pc = 0;
     clock_cycle = 0;
+    flushed_this_cycle = false;
 
     ARF.resize(config.num_regs, 0); // regs are initiliased to zero
     RAT.resize(config.num_regs, -1);
@@ -34,25 +35,12 @@ void Processor::loadProgram(const std::string& filename) {
     pc_limit = inst_memory.size();
 }
 
-bool Processor::isBranchInstruction(const OpCode &op) const {
-    for(auto &o : branchOp) {
-        if(o == op) return true;
-    }
-    return false;
-}
 
 void Processor::stageFetch() {
-    if (current_ins != nullptr) {
-        return;
-    }
-    if (next_pc >= pc_limit) {
-        current_ins = nullptr;
-        return;
-    }
-    if(ROB.isFull()) {
-        current_ins = nullptr;
-        return;
-    }
+    if (current_ins != nullptr) return;
+    bool not_possible = flushed_this_cycle or (next_pc >= pc_limit) or ROB.isFull();
+    if(not_possible) return;
+
     pc = next_pc;
     current_ins = &inst_memory[pc];
     if(current_ins->op == OpCode::J) {
@@ -66,51 +54,23 @@ void Processor::stageFetch() {
     }
 };
 
-UnitType Processor::getUnitForOpcode(const OpCode &op) const { 
-    switch(op) {
-        case OpCode::ADD: return UnitType::ADDER;
-        case OpCode::SUB: return UnitType::ADDER;
-        case OpCode::ADDI: return UnitType::ADDER; 
-        case OpCode::MUL: return UnitType::MULTIPLIER;
-        case OpCode::DIV: return UnitType::DIVIDER;
-        case OpCode::REM: return UnitType::DIVIDER;
-        case OpCode::LW: return UnitType::LOADSTORE;
-        case OpCode::SW: return UnitType::LOADSTORE;
-        case OpCode::BEQ: return UnitType::BRANCH;
-        case OpCode::BNE: return UnitType::BRANCH;
-        case OpCode::BLT: return UnitType::BRANCH;
-        case OpCode::BLE: return UnitType::BRANCH;
-        case OpCode::J: return UnitType::BRANCH;
-        case OpCode::SLT: return UnitType::ADDER;
-        case OpCode::SLTI: return UnitType::ADDER;
-        case OpCode::AND: return UnitType::LOGIC;
-        case OpCode::OR: return UnitType::LOGIC;
-        case OpCode::XOR: return UnitType::LOGIC;
-        case OpCode::ANDI: return UnitType::LOGIC;
-        case OpCode::ORI: return UnitType::LOGIC;
-        case OpCode::XORI: return UnitType::LOGIC;
-        default: throw;
-    }
-}
+
 
 void Processor::stageDecode() {
     if (current_ins == nullptr) return;
-    if (ROB.isFull()) return;
 
-    // if (current_ins->op == OpCode::J) {
-    //     ROBEntry rb_entry;
-    //     rb_entry.busy = false; 
-    //     rb_entry.ins = *current_ins;
-    //     rb_entry.dest = -1;
-    //     rb_entry.value = 1;
-    //     rb_entry.exception = false;
-    //     rb_entry.mispredicted = false;
-    //     rb_entry.predicted_pc = next_pc;
-
-    //     ROB.insert(rb_entry);
-    //     current_ins = nullptr;
-    //     return; 
-    // }
+    if(current_ins->op == OpCode::J) {
+        ROBEntry rb_entry;
+        rb_entry.busy = false;
+        rb_entry.ins = *current_ins;
+        rb_entry.dest = current_ins->dest;
+        rb_entry.value = 1;  
+        rb_entry.exception = false;
+        rb_entry.predicted_pc = next_pc;
+        ROB.insert(rb_entry);
+        current_ins = nullptr;
+        return;
+    }
 
     UnitType unit = getUnitForOpcode(current_ins->op); 
 
@@ -157,7 +117,6 @@ void Processor::stageDecode() {
     rb_entry.dest = current_ins->dest;
     rb_entry.value = 0;  // Placeholder, calculated later   
     rb_entry.exception = false;
-    rb_entry.mispredicted = false;
     rb_entry.predicted_pc = next_pc;
 
     if (unit == UnitType::LOADSTORE) {
@@ -234,28 +193,15 @@ void Processor::stageCommit() {
         } else {
             correct_pc = head.ins.pc + 1;
         }
-
-         if (head.ins.op == OpCode::J) {
-             if (head.predicted_pc != correct_pc) {
-                 next_pc = correct_pc;
-                 flush();
-                 return;
-             }
+        if (head.predicted_pc != correct_pc) {
+            BP.update(head.ins.pc, actually_taken, false, head.ins.op); 
+            pc = head.ins.pc;
+            next_pc = correct_pc;
+            flush();         
+            return;
+        } else {
+            BP.update(head.ins.pc, actually_taken, true, head.ins.op);
         }
-
-        else {
-            if (head.predicted_pc != correct_pc) {
-                BP.update(head.ins.pc, actually_taken, false, head.ins.op); 
-                pc = head.ins.pc;
-                next_pc = correct_pc;
-                flush();         
-                return;
-            } else {
-                BP.update(head.ins.pc, actually_taken, true, head.ins.op);
-            }
-
-        }
-        
     }
 
     if (head.dest > 0) {
@@ -277,6 +223,7 @@ void Processor::stageCommit() {
 }
 
 void Processor::flush() {
+    flushed_this_cycle = true;
     for (auto& [type, eu] : EUS) {
         eu.flush();
     }
@@ -289,6 +236,7 @@ void Processor::flush() {
 
 bool Processor::step() { 
     if (exception) return false; 
+    flushed_this_cycle = false;
     clock_cycle++;
     stageCommit();
     stageExecuteAndBroadcast();

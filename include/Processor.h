@@ -23,6 +23,7 @@ public:
     int pc_limit;
     int clock_cycle = 0;
     bool exception = false; 
+    bool flushed_this_cycle = 0;
 
     Instruction* current_ins = nullptr;
 
@@ -45,9 +46,6 @@ public:
     Processor(ProcessorConfig& config);
     ~Processor();
     void loadProgram(const std::string &filename);
-
-    bool isBranchInstruction(const OpCode &op) const;
-    UnitType getUnitForOpcode(const OpCode &op) const;
 
     void stageFetch();
     void stageDecode();
