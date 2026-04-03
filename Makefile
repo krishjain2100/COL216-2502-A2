@@ -29,7 +29,7 @@ test:
 	@./main $(FILE)
 
 clean:
-	rm -f main prep temp_prep.cpp
+	@rm -f main prep temp_prep.cpp
 
 
 ### ------------------------------------------------------------###

@@ -14,6 +14,7 @@ struct RSInPipeline {
 class ExecutionUnit {
 public:
     ReservationStation rs;
+    RSEntry* entry_to_dispatch = nullptr;
     int latency;
 
     std::vector<RSInPipeline> inPipetIns; 

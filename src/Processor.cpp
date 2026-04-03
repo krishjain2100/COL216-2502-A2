@@ -103,6 +103,7 @@ void Processor::stageDecode() {
     RSEntry rs_entry;
     rs_entry.unit = unit;
     rs_entry.op = current_ins->op;
+    rs_entry.issued_cycle = clock_cycle;
     rs_entry.Qj = Qj;
     rs_entry.Qk = Qk;
     rs_entry.Vj = Vj;

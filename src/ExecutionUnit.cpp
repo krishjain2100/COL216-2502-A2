@@ -10,16 +10,24 @@ void ExecutionUnit::flush() {
 }
 
 void ExecutionUnit::dispatch() {
-    for(auto& entry : rs.entries) {
+    for(auto &entry : rs.entries) {
         if (entry.busy and entry.Qj == -1 and entry.Qk == -1) {
-            RSInPipeline new_op;
-            new_op.cycles_remaining = latency;
-            new_op.data = entry;
-            inPipetIns.push_back(new_op);
-            entry.busy = false; 
-            rs.sz--;
-            break; 
+            if(entry_to_dispatch == nullptr ) {
+                entry_to_dispatch = &entry;
+            }
+            else if(entry_to_dispatch->issued_cycle > entry.issued_cycle){
+                entry_to_dispatch = &entry;
+            }
         }
+    }
+    if(entry_to_dispatch) {
+        RSInPipeline new_op;
+        new_op.cycles_remaining = latency;
+        entry_to_dispatch->busy = false; 
+        new_op.data = *entry_to_dispatch;
+        inPipetIns.push_back(new_op);
+        rs.sz--;
+        entry_to_dispatch = nullptr;
     }
 }
 

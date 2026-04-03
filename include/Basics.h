@@ -106,6 +106,7 @@ struct ROBEntry {
 struct RSEntry {
     UnitType unit;
     OpCode op;
+    int issued_cycle = 0;
     int Qj = -1;
     int Qk = -1;
     int Vj;
