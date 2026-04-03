@@ -1,0 +1,2 @@
+1. We will also introduce exceptions not present in typical RISC-V hardware in order to test the correctness of your precise exception handling.
+2. I dont think i understand how load/store ooo is working

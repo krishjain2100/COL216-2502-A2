@@ -11,7 +11,7 @@ void ExecutionUnit::flush() {
 
 void ExecutionUnit::dispatch() {
     for(auto &entry : rs.entries) {
-        if (entry.busy and entry.Qj == -1 and entry.Qk == -1) {
+        if (entry.busy and !entry.executing and entry.Qj == -1 and entry.Qk == -1) {
             if(entry_to_dispatch == nullptr ) {
                 entry_to_dispatch = &entry;
             }
@@ -23,10 +23,9 @@ void ExecutionUnit::dispatch() {
     if(entry_to_dispatch) {
         RSInPipeline new_op;
         new_op.cycles_remaining = latency;
-        entry_to_dispatch->busy = false; 
-        new_op.data = *entry_to_dispatch;
+        entry_to_dispatch->executing = true; 
+        new_op.parent = entry_to_dispatch;
         inPipetIns.push_back(new_op);
-        rs.sz--;
         entry_to_dispatch = nullptr;
     }
 }
@@ -34,60 +33,61 @@ void ExecutionUnit::dispatch() {
 void ExecutionUnit::executeCycle() {
     for (auto it = inPipetIns.begin(); it != inPipetIns.end(); ) {
         it->cycles_remaining--;
-        RSEntry data = it->data;
+        RSEntry* parent = it->parent;
         if (it->cycles_remaining <= 0) {
             int result = 0;
             bool exception = false;
             long long temp_res = 0; 
-            switch (data.op) {
+            switch (parent->op) {
                 case OpCode::ADD:
-                    temp_res = data.Vj + data.Vk;
+                    temp_res = parent->Vj + parent->Vk;
                     if (temp_res > INF or temp_res < NEGINF) exception = true;
                     result = (int)temp_res;
                     break;
                 case OpCode::ADDI: 
-                    temp_res = data.Vj + data.A; 
+                    temp_res = parent->Vj + parent->A; 
                     if (temp_res > INF or temp_res < NEGINF) exception = true;
                     result = (int)temp_res;
                     break;
                 case OpCode::SUB:  
-                    temp_res = data.Vj - data.Vk;
+                    temp_res = parent->Vj - parent->Vk;
                     if (temp_res > INF or temp_res < NEGINF) exception = true;
                     result = (int)temp_res;
                     break;
                 case OpCode::MUL:  
-                    temp_res = data.Vj * data.Vk;
+                    temp_res = parent->Vj * parent->Vk;
                     if (temp_res > INF or temp_res < NEGINF) exception = true;
                     result = (int)temp_res;
                     break;
                 case OpCode::DIV: 
-                    if (data.Vk == 0) exception = true;
-                    else result = data.Vj / data.Vk; 
+                    if (parent->Vk == 0) exception = true;
+                    else result = parent->Vj / parent->Vk; 
                     break;
                 case OpCode::REM: 
-                    if (data.Vk == 0) exception = true;
-                    else result = data.Vj % data.Vk; 
+                    if (parent->Vk == 0) exception = true;
+                    else result = parent->Vj % parent->Vk; 
                     break;
 
-                case OpCode::SLT: result = (data.Vj < data.Vk) ? 1 : 0; break;
-                case OpCode::SLTI: result = (data.Vj < data.A) ? 1 : 0; break;
-                case OpCode::AND: result = data.Vj & data.Vk; break;
-                case OpCode::ANDI: result = data.Vj & data.A; break;
-                case OpCode::OR: result = data.Vj | data.Vk; break;
-                case OpCode::ORI: result = data.Vj | data.A; break;
-                case OpCode::XOR: result = data.Vj ^ data.Vk; break;
-                case OpCode::XORI: result = data.Vj ^ data.A; break;
+                case OpCode::SLT: result = (parent->Vj < parent->Vk) ? 1 : 0; break;
+                case OpCode::SLTI: result = (parent->Vj < parent->A) ? 1 : 0; break;
+                case OpCode::AND: result = parent->Vj & parent->Vk; break;
+                case OpCode::ANDI: result = parent->Vj & parent->A; break;
+                case OpCode::OR: result = parent->Vj | parent->Vk; break;
+                case OpCode::ORI: result = parent->Vj | parent->A; break;
+                case OpCode::XOR: result = parent->Vj ^ parent->Vk; break;
+                case OpCode::XORI: result = parent->Vj ^ parent->A; break;
 
-                case OpCode::BEQ: result = (data.Vj == data.Vk) ? 1 : 0; break;
-                case OpCode::BNE: result = (data.Vj != data.Vk) ? 1 : 0; break;
-                case OpCode::BLT: result = (data.Vj < data.Vk) ? 1 : 0; break;
-                case OpCode::BLE: result = (data.Vj <= data.Vk) ? 1 : 0; break;
+                case OpCode::BEQ: result = (parent->Vj == parent->Vk) ? 1 : 0; break;
+                case OpCode::BNE: result = (parent->Vj != parent->Vk) ? 1 : 0; break;
+                case OpCode::BLT: result = (parent->Vj < parent->Vk) ? 1 : 0; break;
+                case OpCode::BLE: result = (parent->Vj <= parent->Vk) ? 1 : 0; break;
                 case OpCode::J: result = 1; break;
                     
                 default: break;
             }
-
-            ready_to_broadcast.push_back({data.rob_tag, result, true, exception}); 
+            parent->busy = false;
+            rs.sz--;
+            ready_to_broadcast.push_back({parent->rob_tag, result, true, exception}); 
             it = inPipetIns.erase(it);
         } 
         else {

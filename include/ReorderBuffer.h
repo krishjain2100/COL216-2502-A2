@@ -1,6 +1,7 @@
 #pragma once
 #include "Basics.h"
 #include "CommonDataBus.h"
+#include <vector>
 
 class ReorderBuffer {
 public:

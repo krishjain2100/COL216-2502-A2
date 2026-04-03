@@ -1,7 +1,9 @@
+#pragma once
 #include <fstream>
 #include <string>
 #include <vector>
 #include "Basics.h"
+#include "OpCodeUtils.h"
 
 class Parser {
 public:

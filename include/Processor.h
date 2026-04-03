@@ -8,6 +8,7 @@
 #include <vector>
 #include <map>
 #include "Basics.h"
+#include "OpCodeUtils.h"
 #include "ExecutionUnit.h"
 #include "ReorderBuffer.h"
 #include "LoadStoreQueue.h"

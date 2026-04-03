@@ -8,7 +8,7 @@ inline constexpr long long NEGINF = -2147483648LL;
 
 struct RSInPipeline {
     int cycles_remaining;
-    RSEntry data;
+    RSEntry* parent;
 };
 
 class ExecutionUnit {

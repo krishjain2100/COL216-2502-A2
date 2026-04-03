@@ -1,5 +1,4 @@
 #include "../include/Processor.h"
-#include <vector>
 
 Processor::Processor(ProcessorConfig& config) {
     pc = 0;
@@ -110,7 +109,8 @@ void Processor::stageDecode() {
     rs_entry.Vk = Vk;
     rs_entry.A = current_ins->imm;
     rs_entry.rob_tag = tag;
-    rs_entry.busy = !(unit == UnitType::LOADSTORE);
+    rs_entry.busy = true;
+    rs_entry.executing = false;
 
     ROBEntry rb_entry;
     rb_entry.busy = true;
@@ -214,12 +214,14 @@ void Processor::stageCommit() {
 
     if (head.ins.op == OpCode::SW) {
         int address = LSQ.lsq.front().A;
-        Memory[address] = head.value; 
+        int value = LSQ.lsq.front().Vk;
+        Memory[address] = value; 
     }
 
     if (head.ins.op == OpCode::LW or head.ins.op == OpCode::SW) {
         LSQ.pop();
     }
+
     ROB.remove();
 }
 

@@ -44,13 +44,13 @@ void LoadStoreQueue::pop() {
 
 void LoadStoreQueue::dispatch() {
     for (auto& entry : lsq) {
-        if(entry.busy) continue;
-        if (entry.Qj == -1 && entry.Qk == -1) {
+        if(entry.executing) continue;
+        if(entry.Qj == -1 && entry.Qk == -1) {
             LSQInPipeline new_op;
             new_op.cycles_remaining = latency;
             new_op.parent = &entry;
             inPipetIns.push_back(new_op);
-            entry.busy = true; 
+            entry.executing = true; 
         }
         break;
     }
@@ -71,11 +71,8 @@ void LoadStoreQueue::executeCycle(const std::vector<int>& Memory) {
                 if (parent->op == OpCode::LW) {
                     result = Memory[parent->A];
                 }
-                else {
-                    result = parent->Vk;
-                }
             }
-            ready_to_broadcast.push_back({parent->rob_tag, result, true, exception}); 
+            ready_to_broadcast.push_back({ parent->rob_tag, result, true, exception });
             it = inPipetIns.erase(it);
         } 
         else {
