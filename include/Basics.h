@@ -58,7 +58,7 @@ struct RSEntry {
     int Vk;
     int A; // for lw-sw, first imm then actual address
     int rob_tag;
-    bool busy = false; 
+    bool valid = false; 
     bool executing  = false;
 };
 

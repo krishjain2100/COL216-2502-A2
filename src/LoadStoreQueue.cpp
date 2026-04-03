@@ -1,35 +1,41 @@
 #include "../include/LoadStoreQueue.h"
 
-LoadStoreQueue::LoadStoreQueue() : latency(0), rs_size(0) {}
+LoadStoreQueue::LoadStoreQueue() {}
+
 LoadStoreQueue::LoadStoreQueue(int _latency, int _rs_size) : latency(_latency), rs_size(_rs_size) {
+    entries.resize(_rs_size);
     pipeline.resize(_latency);
 }
 
 int LoadStoreQueue::getSize() const {
-    return lsq.size();
+    return sz;
 }
 
 bool LoadStoreQueue::isFull() const {
-    return getSize() >= rs_size;
+    return sz >= rs_size;
 }
 
-bool LoadStoreQueue::insert(const RSEntry &entry) {
+bool LoadStoreQueue::push(const RSEntry &entry) {
     if (isFull()) return false;
-    lsq.push_back(entry);
+    entries[tail] = entry;
+    tail = (tail + 1) % rs_size;
+    sz++;
     return true;
 }
 
 void LoadStoreQueue::listen(const CDB& bus) {
-    if (!bus.current.valid) return;
-    for (auto& entry : lsq) {
-        if (entry.Qj == bus.current.tag) {
-            entry.Vj = bus.current.value;
-            entry.Qj = -1;
+    if (!bus.current.valid or sz == 0) return;
+    int i = head;
+    for (int count = 0; count < sz; count++) {
+        if (entries[i].Qj == bus.current.tag) {
+            entries[i].Vj = bus.current.value;
+            entries[i].Qj = -1;
         }
-        if (entry.Qk == bus.current.tag) {
-            entry.Vk = bus.current.value;
-            entry.Qk = -1;
+        if (entries[i].Qk == bus.current.tag) {
+            entries[i].Vk = bus.current.value;
+            entries[i].Qk = -1;
         }
+        i = (i + 1) % rs_size;
     }
 }
 
@@ -39,44 +45,52 @@ void LoadStoreQueue::flush() {
         stage.parent = nullptr;
     }
     ready_to_broadcast.clear();
-    lsq.clear();
+    head = 0;
+    tail = 0;
+    sz = 0;
 }
 
 void LoadStoreQueue::pop() {
-    if(lsq.empty()) return;
-    lsq.pop_front();
+    if (sz == 0) return;
+    head = (head + 1) % rs_size;
+    sz--;
 }
 
 void LoadStoreQueue::dispatch() {
-    if (pipeline[0].valid) return;
-    for (auto& entry : lsq) {
-        if(entry.executing) continue;
-        if (entry.Qj == -1 && entry.Qk == -1) {
-            entry.executing = true; 
-            pipeline[0].parent = &entry;
-            pipeline[0].valid = true;
+    if (latency == 0 or pipeline[0].valid or sz == 0) return;
+    int i = head;
+    for (int count = 0; count < sz; count++) {
+        if (!entries[i].executing) {
+            if (entries[i].Qj == -1 && entries[i].Qk == -1) {
+                entries[i].executing = true;
+                pipeline[0].parent = &entries[i];
+                pipeline[0].valid = true;
+            }
+            break; 
         }
-        break;
+        i = (i + 1) % rs_size;
     }
 }
 
 void LoadStoreQueue::executeCycle(const std::vector<int>& Memory) {
+    if (latency == 0) return;
+
     if (pipeline.back().valid) {
         RSEntry* parent = pipeline.back().parent;
         bool exception = false;
         int result = 0;
         parent->A = parent->Vj + parent->A; 
-        if (parent->A < 0 or parent->A >= Memory.size()) {
+        if (parent->A < 0 or parent->A >= (int)Memory.size()) {
             exception = true;
-        } 
-        else {
+        } else {
             if (parent->op == OpCode::LW) {
                 result = Memory[parent->A];
-                for (auto &entry : lsq) {
-                    if (&entry == parent) break; 
-                    if (entry.op == OpCode::SW && entry.A == parent->A) {
-                        result = entry.Vk; 
+                int i = head;
+                while (&entries[i] != parent) {
+                    if (entries[i].op == OpCode::SW && entries[i].A == parent->A) {
+                        result = entries[i].Vk;
                     }
+                    i = (i + 1) % rs_size;
                 }
             }
         }
@@ -85,8 +99,6 @@ void LoadStoreQueue::executeCycle(const std::vector<int>& Memory) {
     for (int i = latency - 1; i > 0; i--) {
         pipeline[i] = pipeline[i - 1];
     }
-
     pipeline[0].valid = false;
     pipeline[0].parent = nullptr;
 }
-

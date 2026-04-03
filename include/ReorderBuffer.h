@@ -7,8 +7,8 @@ class ReorderBuffer {
 public:
 	std::vector<ROBEntry> buffer;
 	int rob_size;
-	int left = 0;
-	int right = 0;
+	int head = 0;
+	int tail = 0;
 	int sz = 0;
 
 	int getSize() const;

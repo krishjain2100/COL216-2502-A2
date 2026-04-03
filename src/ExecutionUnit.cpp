@@ -18,7 +18,7 @@ void ExecutionUnit::dispatch() {
     if (pipeline[0].valid) return;
     RSEntry* entry_to_dispatch = nullptr;
     for(auto &entry : rs.entries) {
-        if (entry.busy and !entry.executing and entry.Qj == -1 and entry.Qk == -1) {
+        if (entry.valid and !entry.executing and entry.Qj == -1 and entry.Qk == -1) {
             if(entry_to_dispatch == nullptr ) {
                 entry_to_dispatch = &entry;
             }
@@ -87,7 +87,7 @@ void ExecutionUnit::executeCycle() {
                 
             default: break;
         }
-        parent->busy = false;
+        parent->valid = false;
         rs.sz--;
         ready_to_broadcast.push_back({parent->rob_tag, result, true, exception}); 
     }

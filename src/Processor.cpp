@@ -109,7 +109,7 @@ void Processor::stageDecode() {
     rs_entry.Vk = Vk;
     rs_entry.A = current_ins->imm;
     rs_entry.rob_tag = tag;
-    rs_entry.busy = true;
+    rs_entry.valid = true;
     rs_entry.executing = false;
 
     ROBEntry rb_entry;
@@ -121,7 +121,7 @@ void Processor::stageDecode() {
     rb_entry.predicted_pc = next_pc;
 
     if (unit == UnitType::LOADSTORE) {
-        LSQ.insert(rs_entry);
+        LSQ.push(rs_entry);
     } else {
         EUS[unit].rs.insert(rs_entry);
     }
@@ -168,7 +168,7 @@ void Processor::stageExecuteAndBroadcast() {
 
 void Processor::stageCommit() {
     if(ROB.isEmpty()) return;
-    ROBEntry &head = ROB.buffer[ROB.left];
+    ROBEntry &head = ROB.buffer[ROB.head];
 
     if (head.busy) return; 
 
@@ -201,14 +201,14 @@ void Processor::stageCommit() {
 
     if (head.dest > 0) {
         ARF[head.dest] = head.value;
-        if (RAT[head.dest] == ROB.left) {
+        if (RAT[head.dest] == ROB.head) {
             RAT[head.dest] = -1; 
         }
     }
 
     if (head.ins.op == OpCode::SW) {
-        int address = LSQ.lsq.front().A;
-        int value = LSQ.lsq.front().Vk;
+        int address = LSQ.entries[LSQ.head].A;
+        int value = LSQ.entries[LSQ.head].Vk;
         Memory[address] = value; 
     }
 
@@ -289,11 +289,11 @@ void Processor::logCycleState() {
     log_file << std::string(50, '-') << "\n";
 
     // 2. Log ROB Status to file
-    log_file << "REORDER BUFFER (Head: " << ROB.left << ", Tail: " << ROB.right << "):\n";
+    log_file << "REORDER BUFFER (Head: " << ROB.head << ", Tail: " << ROB.tail << "):\n";
     if (ROB.isEmpty()) {
         log_file << "  [Empty]\n";
     } else {
-        int i = ROB.left;
+        int i = ROB.head;
         while (true) {
             ROBEntry &e = ROB.buffer[i];
             log_file << "  Tag " << i << " | Busy: " << (e.busy ? "Yes" : "No ") 
@@ -301,7 +301,7 @@ void Processor::logCycleState() {
                       << " | Value: " << e.value << "\n";
             
             i = (i + 1) % ROB.rob_size;
-            if (i == ROB.right) break;
+            if (i == ROB.tail) break;
         }
     }
 
@@ -310,7 +310,7 @@ void Processor::logCycleState() {
     for (auto& [type, eu] : EUS) {
         log_file << "  Unit " << static_cast<int>(type) << " (Size: " << eu.rs.sz << "):\n";
         for (auto& entry : eu.rs.entries) {
-            if (entry.busy) {
+            if (entry.valid) {
                 log_file << "    [Tag " << entry.rob_tag << "] Op: " << opMapRev.at(entry.op)
                           << " | Qj: " << entry.Qj << " | Qk: " << entry.Qk 
                           << " | Vj: " << entry.Vj << " | Vk: " << entry.Vk << "\n";
@@ -320,12 +320,12 @@ void Processor::logCycleState() {
 
     // 4. Log LSQ to file
     log_file << "\nLOAD/STORE QUEUE:\n";
-    if (LSQ.lsq.empty()) {
+    if (LSQ.entries.empty()) {
         log_file << "  [Empty]\n";
     } else {
-        for (auto& entry : LSQ.lsq) {
+        for (auto& entry : LSQ.entries) {
             log_file << "    [Tag " << entry.rob_tag << "] Op: " << opMapRev.at(entry.op)
-                      << " | Addr: " << entry.A << " | Busy: " << (entry.busy ? "Yes" : "No") << "\n";
+                      << " | Addr: " << entry.A << " | Busy: " << (entry.valid ? "Yes" : "No") << "\n";
         }
     }
 

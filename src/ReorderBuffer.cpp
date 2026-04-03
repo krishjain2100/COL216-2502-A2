@@ -10,27 +10,27 @@ bool ReorderBuffer::isEmpty() const {
     return !sz;
 }
 int ReorderBuffer::getNextTag() const {
-    return right;
+    return tail;
 }
 
 void ReorderBuffer::flush() {
-    left = 0;
-    right = 0;
+    head = 0;
+    tail = 0;
     sz = 0;
 }
 
 void ReorderBuffer::insert(const ROBEntry new_entry) {
     if(isFull()) return;
     sz++;
-    buffer[right] = new_entry;
-    right = (right +  1) % rob_size;
+    buffer[tail] = new_entry;
+    tail = (tail +  1) % rob_size;
 }
 
 void ReorderBuffer::remove() {
     if(isEmpty()) return;
     sz--;
-    buffer[left].busy = false;
-    left = (left + 1) % rob_size;
+    buffer[head].busy = false;
+    head = (head + 1) % rob_size;
     return;
 }
 

@@ -5,10 +5,11 @@
 
 class ReservationStation {
 public:
+	int rs_size;
 	int sz = 0;
 	std::vector<RSEntry> entries;
 
-	ReservationStation(int rs_size);
+	ReservationStation(int _rs_size);
 
 	int getSize() const;
 	bool isFull() const;

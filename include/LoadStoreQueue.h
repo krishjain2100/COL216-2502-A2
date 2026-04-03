@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include <deque>
 #include "Basics.h"
 #include "CommonDataBus.h"
 
@@ -8,8 +7,11 @@ class LoadStoreQueue {
 public:
     int latency;
     int rs_size;
+    int head = 0;  
+    int tail = 0; 
+    int sz = 0;
 
-    std::deque<RSEntry> lsq;
+    std::vector<RSEntry> entries;
     std::vector<PipelineMember> pipeline;
     std::vector<Broadcast> ready_to_broadcast;
 
@@ -18,7 +20,7 @@ public:
 
     int getSize() const;
     bool isFull() const;
-    bool insert(const RSEntry &entry);
+    bool push(const RSEntry &entry);
     void pop();
 
     void flush();

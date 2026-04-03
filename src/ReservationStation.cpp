@@ -1,7 +1,6 @@
 #include "../include/ReservationStation.h"
 
-
-ReservationStation::ReservationStation(int rs_size) {
+ReservationStation::ReservationStation(int _rs_size) : rs_size(_rs_size) {
     entries.resize(rs_size);
 }
 
@@ -9,8 +8,7 @@ int ReservationStation::getSize() const {
     return sz;
 }
 bool ReservationStation::isFull() const {
-    int rs_size = entries.size();
-    return (sz == rs_size);
+    return (sz >= rs_size);
 }
 bool ReservationStation::isEmpty() const {
     return !sz;
@@ -19,7 +17,7 @@ bool ReservationStation::isEmpty() const {
 void ReservationStation::insert(const RSEntry &entry) {
     if(isFull()) return;
     for(auto &e : entries) {
-        if(e.busy) continue;
+        if(e.valid) continue;
         e = entry;
         break;
     }
@@ -27,7 +25,7 @@ void ReservationStation::insert(const RSEntry &entry) {
 }
 
 void ReservationStation::clear() {
-    for(auto &e: entries) e.busy = false;
+    for(auto &e: entries) e.valid = false;
     sz = 0;
 }
 
