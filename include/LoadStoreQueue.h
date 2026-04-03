@@ -4,18 +4,13 @@
 #include "Basics.h"
 #include "CommonDataBus.h"
 
-struct LSQInPipeline {
-    int cycles_remaining = 0;
-    RSEntry* parent = nullptr;
-};
-  
 class LoadStoreQueue {
 public:
     int latency;
     int rs_size;
 
     std::deque<RSEntry> lsq;
-    std::vector<LSQInPipeline> inPipetIns;
+    std::vector<PipelineMember> pipeline;
     std::vector<Broadcast> ready_to_broadcast;
 
     LoadStoreQueue();

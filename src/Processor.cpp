@@ -6,7 +6,7 @@ Processor::Processor(ProcessorConfig& config) {
     clock_cycle = 0;
     flushed_this_cycle = false;
 
-    ARF.resize(config.num_regs, 0); // regs are initiliased to zero
+    ARF.resize(config.num_regs, 0);
     RAT.resize(config.num_regs, -1);
     Memory.resize(config.mem_size, 0);
     ROB.rob_size = config.rob_size;
@@ -37,7 +37,7 @@ void Processor::loadProgram(const std::string& filename) {
 
 void Processor::stageFetch() {
     if (current_ins != nullptr) return;
-    bool not_possible = flushed_this_cycle or (next_pc >= pc_limit) or ROB.isFull();
+    bool not_possible = flushed_this_cycle or (next_pc >= pc_limit);
     if(not_possible) return;
 
     pc = next_pc;
@@ -135,40 +135,34 @@ void Processor::stageDecode() {
     current_ins = nullptr; 
 };
 
-void Processor::stageExecuteAndBroadcast() {
-    for(auto & [type, eu] : EUS) {
-        eu.dispatch();
+void Processor::listenAll() {
+    for (auto& [t, eu] : EUS) {
+        eu.rs.listen(BUS);
     }
+    LSQ.listen(BUS);
+    ROB.listen(BUS);
+}
+
+void Processor::stageExecuteAndBroadcast() {
+    for(auto & [type, eu] : EUS) eu.dispatch();
     LSQ.dispatch();
 
-    for (auto& [type, eu] : EUS) {
-        eu.executeCycle();
-    }
+    for (auto& [type, eu] : EUS) eu.executeCycle();
     LSQ.executeCycle(Memory);
-
-    std::vector<Broadcast> to_broadcast;
-
+    
     for(auto &[type, eu] : EUS) {
         for (auto& bc : eu.ready_to_broadcast) {
-            to_broadcast.push_back(bc);
+            BUS.broadcast(bc.tag, bc.value, bc.exception);
+            listenAll();
         }
         eu.ready_to_broadcast.clear();
     }
 
     for (auto& bc : LSQ.ready_to_broadcast) {
-        to_broadcast.push_back(bc);
+        BUS.broadcast(bc.tag, bc.value, bc.exception);
+        listenAll();
     }
     LSQ.ready_to_broadcast.clear();
-
-    for (auto& bc : to_broadcast) {
-        BUS.broadcast(bc.tag, bc.value, bc.exception);
-        for (auto& [t, eu] : EUS) {
-            eu.rs.listen(BUS);
-        }
-        LSQ.listen(BUS);
-        ROB.listen(BUS);
-    }
-
     BUS.clear();
 };
 

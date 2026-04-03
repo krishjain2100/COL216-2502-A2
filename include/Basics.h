@@ -62,6 +62,10 @@ struct RSEntry {
     bool executing  = false;
 };
 
+struct PipelineMember {
+    RSEntry* parent;
+    bool valid = false;
+};
 
 
 

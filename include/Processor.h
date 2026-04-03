@@ -29,7 +29,6 @@ public:
     Instruction* current_ins = nullptr;
 
     std::vector<Instruction> inst_memory;
-    std::vector<RSEntry> ready_for_execution;
     
     std::vector<int> ARF; 
     std::vector<int> Memory; 
@@ -48,6 +47,7 @@ public:
     ~Processor();
     void loadProgram(const std::string &filename);
 
+    void listenAll();
     void stageFetch();
     void stageDecode();
     void stageExecuteAndBroadcast();

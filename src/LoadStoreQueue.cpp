@@ -1,7 +1,9 @@
 #include "../include/LoadStoreQueue.h"
 
 LoadStoreQueue::LoadStoreQueue() : latency(0), rs_size(0) {}
-LoadStoreQueue::LoadStoreQueue(int _latency, int _rs_size) : latency(_latency), rs_size(_rs_size) {}
+LoadStoreQueue::LoadStoreQueue(int _latency, int _rs_size) : latency(_latency), rs_size(_rs_size) {
+    pipeline.resize(_latency);
+}
 
 int LoadStoreQueue::getSize() const {
     return lsq.size();
@@ -32,7 +34,10 @@ void LoadStoreQueue::listen(const CDB& bus) {
 }
 
 void LoadStoreQueue::flush() {
-    inPipetIns.clear();
+    for (auto& stage : pipeline) {
+        stage.valid = false;
+        stage.parent = nullptr;
+    }
     ready_to_broadcast.clear();
     lsq.clear();
 }
@@ -43,40 +48,45 @@ void LoadStoreQueue::pop() {
 }
 
 void LoadStoreQueue::dispatch() {
+    if (pipeline[0].valid) return;
     for (auto& entry : lsq) {
         if(entry.executing) continue;
-        if(entry.Qj == -1 && entry.Qk == -1) {
-            LSQInPipeline new_op;
-            new_op.cycles_remaining = latency;
-            new_op.parent = &entry;
-            inPipetIns.push_back(new_op);
+        if (entry.Qj == -1 && entry.Qk == -1) {
             entry.executing = true; 
+            pipeline[0].parent = &entry;
+            pipeline[0].valid = true;
         }
         break;
     }
 }
 
 void LoadStoreQueue::executeCycle(const std::vector<int>& Memory) {
-    for (auto it = inPipetIns.begin(); it != inPipetIns.end(); ) {
-        it->cycles_remaining--;
-        RSEntry* parent = it->parent;
-        if (it->cycles_remaining <= 0) {
-            bool exception = false;
-            int result = 0;
-            parent->A = parent->Vj + parent->A; 
-            if (parent->A < 0 or parent->A >= Memory.size()) {
-                exception = true;
-            } 
-            else {
-                if (parent->op == OpCode::LW) {
-                    result = Memory[parent->A];
-                }
-            }
-            ready_to_broadcast.push_back({ parent->rob_tag, result, true, exception });
-            it = inPipetIns.erase(it);
+    if (pipeline.back().valid) {
+        RSEntry* parent = pipeline.back().parent;
+        bool exception = false;
+        int result = 0;
+        parent->A = parent->Vj + parent->A; 
+        if (parent->A < 0 or parent->A >= Memory.size()) {
+            exception = true;
         } 
         else {
-            it++;
+            if (parent->op == OpCode::LW) {
+                result = Memory[parent->A];
+                for (auto &entry : lsq) {
+                    if (&entry == parent) break; 
+                    if (entry.op == OpCode::SW && entry.A == parent->A) {
+                        result = entry.Vk; 
+                    }
+                }
+            }
         }
+        ready_to_broadcast.push_back({ parent->rob_tag, result, true, exception });
     }
+    for (int i = latency - 1; i > 0; i--) {
+        pipeline[i] = pipeline[i - 1];
+    }
+
+    pipeline[0].valid = false;
+    pipeline[0].parent = nullptr;
 }
+
