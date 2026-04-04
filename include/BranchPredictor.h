@@ -4,10 +4,10 @@
 
 class BranchPredictor {
 public:
-    int total_branches = 0;
-    int correct_predictions = 0;
-    std::map <int, int> states;
+	int total_branches = 0;
+	int correct_predictions = 0;
+	std::map <int, int> states;
 
-    int predict(const int &current_pc, const int &imm); // returns the new pc
-    void update(const int &current_pc, const bool &taken, const bool &was_correct, const OpCode &op);
+	int predict(const int &current_pc, const int &imm);
+	void update(const int &current_pc, const bool &taken, const bool &was_correct);
 };

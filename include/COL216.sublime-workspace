@@ -1,0 +1,6596 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"con",
+				"const"
+			],
+			[
+				"Ex",
+				"ExecutionUnit"
+			],
+			[
+				"E",
+				"ExecutionUnit"
+			],
+			[
+				"Uni",
+				"UnitType"
+			],
+			[
+				"val",
+				"valid"
+			],
+			[
+				"is",
+				"isFull"
+			],
+			[
+				"en",
+				"entry"
+			],
+			[
+				"ent",
+				"entry"
+			],
+			[
+				"va",
+				"valid"
+			],
+			[
+				"ge",
+				"getLatency"
+			],
+			[
+				"la",
+				"latency"
+			],
+			[
+				"p",
+				"pipeline"
+			],
+			[
+				"rs",
+				"rs_size"
+			],
+			[
+				"ls",
+				"lsq_rs_size"
+			],
+			[
+				"to",
+				"to_broadcast"
+			],
+			[
+				"lis",
+				"listenAll"
+			],
+			[
+				"r",
+				"resize"
+			],
+			[
+				"in",
+				"inPipetIns"
+			],
+			[
+				"ex",
+				"executing"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"ins",
+				"ins_to_dispatch"
+			],
+			[
+				"RS",
+				"RSEntry"
+			],
+			[
+				"flus",
+				"flushed_this_cycle"
+			],
+			[
+				"fl",
+				"flushed_this_cycle"
+			],
+			[
+				"flush",
+				"flushed_this_cycle"
+			],
+			[
+				"c",
+				"current_pc"
+			],
+			[
+				"stat",
+				"states"
+			],
+			[
+				"po",
+				"pop_front"
+			],
+			[
+				"Basi",
+				"Basic"
+			],
+			[
+				"Lo",
+				"LOADSTORE"
+			],
+			[
+				"uni",
+				"unit"
+			],
+			[
+				"get",
+				"getSize"
+			],
+			[
+				"re",
+				"resize"
+			],
+			[
+				"entr",
+				"entries"
+			],
+			[
+				"regis",
+				"register_alias_table"
+			],
+			[
+				"R",
+				"RSEntry"
+			],
+			[
+				"LO",
+				"LOADSTORE"
+			],
+			[
+				"_",
+				"_latency"
+			],
+			[
+				"new",
+				"new_entries"
+			],
+			[
+				"push",
+				"push_back"
+			],
+			[
+				"Read",
+				"ready_for_execution"
+			],
+			[
+				"ROB",
+				"ROBEntry"
+			],
+			[
+				"ro",
+				"rob_size"
+			],
+			[
+				"Re",
+				"ReorderBuffer"
+			],
+			[
+				"pop",
+				"pop_front"
+			],
+			[
+				"pus",
+				"push_back"
+			],
+			[
+				"Ro",
+				"ROBEntry"
+			],
+			[
+				"stage",
+				"stageCommit"
+			],
+			[
+				"o",
+				"op"
+			],
+			[
+				"if",
+				"I-fstream"
+			],
+			[
+				"co",
+				"countb"
+			],
+			[
+				"mod",
+				"mod_inv"
+			],
+			[
+				"mo",
+				"mod_exp"
+			],
+			[
+				"ord",
+				"ordered_multiset"
+			],
+			[
+				"s",
+				"solver"
+			],
+			[
+				"m",
+				"maxm"
+			],
+			[
+				"mi",
+				"minm"
+			],
+			[
+				"st",
+				"string"
+			],
+			[
+				"ans",
+				"ans3"
+			],
+			[
+				"min",
+				"minm"
+			],
+			[
+				"loe",
+				"lower_bound"
+			],
+			[
+				"pu",
+				"push_back"
+			],
+			[
+				"v",
+				"val3"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"count",
+				"count0"
+			],
+			[
+				"fa",
+				"fact"
+			],
+			[
+				"pr",
+				"print1"
+			],
+			[
+				"pri",
+				"priority_queue"
+			],
+			[
+				"ma",
+				"maxm"
+			],
+			[
+				"se",
+				"second"
+			],
+			[
+				"left",
+				"lefty"
+			],
+			[
+				"l",
+				"last"
+			],
+			[
+				"com",
+				"compress1"
+			],
+			[
+				"fo",
+				"found"
+			],
+			[
+				"cha",
+				"chars"
+			],
+			[
+				"pa",
+				"parent"
+			],
+			[
+				"cot",
+				"continue"
+			],
+			[
+				"su",
+				"suffx"
+			],
+			[
+				"suff",
+				"suffy"
+			],
+			[
+				"k",
+				"key_comp"
+			],
+			[
+				"mex",
+				"mex2"
+			],
+			[
+				"sol",
+				"solver"
+			],
+			[
+				"cou",
+				"count"
+			],
+			[
+				"que",
+				"Query"
+			],
+			[
+				"fr",
+				"freq"
+			],
+			[
+				"right",
+				"right_greater"
+			],
+			[
+				"righ",
+				"right_greater"
+			],
+			[
+				"de",
+				"depth"
+			],
+			[
+				"w",
+				"weights"
+			],
+			[
+				"tot",
+				"totnear"
+			],
+			[
+				"do",
+				"double"
+			],
+			[
+				"defa",
+				"defualt"
+			],
+			[
+				"pre",
+				"prefidx"
+			],
+			[
+				"lo",
+				"lower_bound"
+			],
+			[
+				"xor",
+				"xorall2"
+			],
+			[
+				"emp",
+				"emplace_back"
+			],
+			[
+				"puh",
+				"push_back"
+			],
+			[
+				"fi",
+				"find"
+			],
+			[
+				"fal",
+				"flag"
+			],
+			[
+				"fli",
+				"flipped"
+			],
+			[
+				"bti",
+				"bit1"
+			],
+			[
+				"i",
+				"inv_denom"
+			],
+			[
+				"find",
+				"findmsb"
+			],
+			[
+				"bit",
+				"bitb"
+			],
+			[
+				"ps",
+				"push_back"
+			],
+			[
+				"sum",
+				"g_sum_mutex"
+			],
+			[
+				"par",
+				"partial_sum"
+			],
+			[
+				"thre",
+				"threads"
+			],
+			[
+				"corner",
+				"corner2"
+			],
+			[
+				"di",
+				"dist2"
+			],
+			[
+				"d",
+				"dist"
+			],
+			[
+				"req",
+				"reqa"
+			],
+			[
+				"cu",
+				"curr_base"
+			],
+			[
+				"max",
+				"max_element"
+			],
+			[
+				"las",
+				"last2"
+			],
+			[
+				"pref",
+				"pref2"
+			],
+			[
+				"str",
+				"strength"
+			],
+			[
+				"u",
+				"update"
+			],
+			[
+				"La",
+				"LazySGTree"
+			],
+			[
+				"dis",
+				"distance"
+			],
+			[
+				"wei",
+				"weigh2"
+			],
+			[
+				"we",
+				"weigh1"
+			],
+			[
+				"aff",
+				"affect2"
+			],
+			[
+				"ve",
+				"vector\tstd::vector"
+			],
+			[
+				"t",
+				"tie"
+			],
+			[
+				"lef",
+				"leftmax"
+			],
+			[
+				"psu",
+				"push_back"
+			],
+			[
+				"n",
+				"nullptr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "CommonDataBus.h",
+			"redo_stack":
+			[
+				[
+					48,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "\n ",
+								"range":
+								{
+									"end":
+									{
+										"character": 0,
+										"line": 4
+									},
+									"start":
+									{
+										"character": 11,
+										"line": 3
+									}
+								}
+							},
+							{
+								"newText": "\n ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 5
+									},
+									"start":
+									{
+										"character": 7,
+										"line": 4
+									}
+								}
+							},
+							{
+								"newText": "\n ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 6
+									},
+									"start":
+									{
+										"character": 19,
+										"line": 5
+									}
+								}
+							},
+							{
+								"newText": "\n ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 7
+									},
+									"start":
+									{
+										"character": 52,
+										"line": 6
+									}
+								}
+							}
+						],
+						"label": "Format on Save",
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"BAAAAC0AAAAAAAAALgAAAAAAAAACAAAACiA1AAAAAAAAADcAAAAAAAAAAgAAAAogSQAAAAAAAABLAAAAAAAAAAIAAAAKIH4AAAAAAAAAgAAAAAAAAAACAAAACiA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACRAAAAAAAAAJEAAAAAAAAAAAAAAAAA8L8"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 144,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					6,
+					1,
+					"unexpand_tabs",
+					{
+						"set_translate_tabs": true
+					},
+					"AQAAAAAAAAAAAAAAkAAAAAAAAACZAAAAI3ByYWdtYSBvbmNlCiNpbmNsdWRlICJCYXNpY3MuaCIKCmNsYXNzIENEQiB7CnB1YmxpYzoKICAgIEJyb2FkY2FzdCBjdXJyZW50OwogICAgdm9pZCBicm9hZGNhc3QoaW50IHRhZywgaW50IHZhbHVlLCBib29sIGV4Y2VwdGlvbik7CiAgICB2b2lkIGNsZWFyKCk7Cn07",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvw"
+				]
+			]
+		},
+		{
+			"file": "/Users/krishjain/Desktop/COL216-2502-A2/.clang-format",
+			"settings":
+			{
+				"buffer_size": 9071,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					10,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAPAAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					43,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAAA8AAAAQmFzZWRPblN0eWxlOiBMTFZNClVzZVRhYjogQWx3YXlzCkluZGVudFdpZHRoOiAxClRhYldpZHRoOiAxAAAAAAAAAABuIwAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAA8AAAAAAAAADwAAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					74,
+					1,
+					"left_delete",
+					null,
+					"AQAAABYVAAAAAAAAFhUAAAAAAAABAAAAMg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAXFQAAAAAAABcVAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					75,
+					1,
+					"insert",
+					{
+						"characters": "4"
+					},
+					"AQAAABYVAAAAAAAAFxUAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAWFQAAAAAAABYVAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					19,
+					1,
+					"left_delete",
+					null,
+					"AQAAAI0iAAAAAAAAjSIAAAAAAAABAAAAOA",
+					"AQAAAAAAAAABAAAAjiIAAAAAAACOIgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					20,
+					1,
+					"insert",
+					{
+						"characters": "4"
+					},
+					"AQAAAI0iAAAAAAAAjiIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAjSIAAAAAAACNIgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					23,
+					1,
+					"insert",
+					{
+						"characters": "Always"
+					},
+					"BgAAAKAiAAAAAAAAoSIAAAAAAAAFAAAATmV2ZXKhIgAAAAAAAKIiAAAAAAAAAAAAAKIiAAAAAAAAoyIAAAAAAAAAAAAAoyIAAAAAAACkIgAAAAAAAAAAAACkIgAAAAAAAKUiAAAAAAAAAAAAAKUiAAAAAAAApiIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAApSIAAAAAAACgIgAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "Searching 39 files for \".clang-format\"\n\n0 matches\n\nSearching 39 files for \".clang\"\n\n0 matches",
+			"settings":
+			{
+				"buffer_size": 93,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/Users/krishjain/Desktop/COL216-2502-A2/src/BranchPredictor.cpp",
+			"redo_stack":
+			[
+				[
+					40,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 3
+									},
+									"start":
+									{
+										"character": 69,
+										"line": 2
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 4
+									},
+									"start":
+									{
+										"character": 33,
+										"line": 3
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 5
+									},
+									"start":
+									{
+										"character": 12,
+										"line": 4
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 5
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 5
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 15,
+										"line": 5
+									},
+									"start":
+									{
+										"character": 14,
+										"line": 5
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 6
+									},
+									"start":
+									{
+										"character": 52,
+										"line": 5
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 6,
+										"line": 6
+									},
+									"start":
+									{
+										"character": 5,
+										"line": 6
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 7
+									},
+									"start":
+									{
+										"character": 28,
+										"line": 6
+									}
+								}
+							},
+							{
+								"newText": "\n                             ",
+								"range":
+								{
+									"end":
+									{
+										"character": 71,
+										"line": 10
+									},
+									"start":
+									{
+										"character": 70,
+										"line": 10
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 11
+									},
+									"start":
+									{
+										"character": 97,
+										"line": 10
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 12
+									},
+									"start":
+									{
+										"character": 18,
+										"line": 11
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 13
+									},
+									"start":
+									{
+										"character": 19,
+										"line": 12
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 14
+									},
+									"start":
+									{
+										"character": 24,
+										"line": 13
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 15
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 14
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 16
+									},
+									"start":
+									{
+										"character": 33,
+										"line": 15
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 16
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 16
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 17
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 16
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 18
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 17
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 19
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 18
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 19
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 19
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 20
+									},
+									"start":
+									{
+										"character": 28,
+										"line": 19
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 21
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 20
+									}
+								}
+							}
+						],
+						"label": "Format on Save",
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"FgAAAG4AAAAAAAAAcQAAAAAAAAADAAAACiAgkQAAAAAAAACTAAAAAAAAAAMAAAAKICCeAAAAAAAAAKAAAAAAAAAAAwAAAAogIKIAAAAAAAAAogAAAAAAAAABAAAAIK0AAAAAAAAArgAAAAAAAAAFAAAACiAgICDTAAAAAAAAANUAAAAAAAAAAwAAAAogINkAAAAAAAAA2gAAAAAAAAAFAAAACiAgICDwAAAAAAAAAPIAAAAAAAAAAwAAAAogIEoBAAAAAAAASwEAAAAAAAAeAAAACiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZQEAAAAAAABnAQAAAAAAAAMAAAAKICB4AQAAAAAAAHoBAAAAAAAAAwAAAAogIIwBAAAAAAAAjwEAAAAAAAAFAAAACiAgICClAQAAAAAAAKcBAAAAAAAAAwAAAAogIKgBAAAAAAAAqgEAAAAAAAADAAAACiAgygEAAAAAAADMAQAAAAAAAAMAAAAKICDOAQAAAAAAAM4BAAAAAAAAAQAAACDmAQAAAAAAAOkBAAAAAAAABQAAAAogICAg8QEAAAAAAADzAQAAAAAAAAMAAAAKICD0AQAAAAAAAPYBAAAAAAAAAwAAAAogIPgBAAAAAAAA+AEAAAAAAAABAAAAIBECAAAAAAAAFAIAAAAAAAAFAAAACiAgICAcAgAAAAAAAB4CAAAAAAAAAwAAAAogIA",
+					"AQAAAAAAAAABAAAA5gAAAAAAAADmAAAAAAAAAAAAAAAAAPC/"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 545,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					33,
+					1,
+					"unindent",
+					null,
+					"BgAAAHAAAAAAAAAAcAAAAAAAAAABAAAACZIAAAAAAAAAkgAAAAAAAAABAAAACZ8AAAAAAAAAnwAAAAAAAAABAAAACdQAAAAAAAAA1AAAAAAAAAABAAAACfEAAAAAAAAA8QAAAAAAAAABAAAACQEBAAAAAAAAAQEAAAAAAAABAAAACQ",
+					"AQAAAAAAAAABAAAACAEAAAAAAAByAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "krishjain@Krishs-MacBook-Air COL216-2502-A2 %                                                      \nkrishjain@Krishs-MacBook-Air COL216-2502-A2 % ",
+			"settings":
+			{
+				"buffer_size": 146,
+				"line_ending": "Unix",
+				"name": "Login Shell",
+				"scratch": true
+			},
+			"undo_stack":
+			[
+				[
+					7,
+					2,
+					"terminus_render",
+					null,
+					"HQEAAAAAAAAAAAAALQAAAAAAAAAuAAAAa3Jpc2hqYWluQEtyaXNocy1NYWNCb29rLUFpciBDT0wyMTYtMjUwMi1BMiAlIC0AAAAAAAAAYwAAAAAAAAAAAAAAYwAAAAAAAABkAAAAAAAAAAAAAABkAAAAAAAAAGQAAAAAAAAAAAAAAGQAAAAAAAAAZQAAAAAAAAAAAAAAZQAAAAAAAABlAAAAAAAAAAAAAABlAAAAAAAAAGYAAAAAAAAAAAAAAGYAAAAAAAAAZgAAAAAAAAAAAAAAZgAAAAAAAABnAAAAAAAAAAAAAABnAAAAAAAAAGcAAAAAAAAAAAAAAGcAAAAAAAAAaAAAAAAAAAAAAAAAaAAAAAAAAABoAAAAAAAAAAAAAABoAAAAAAAAAGkAAAAAAAAAAAAAAGkAAAAAAAAAaQAAAAAAAAAAAAAAaQAAAAAAAABqAAAAAAAAAAAAAABqAAAAAAAAAGoAAAAAAAAAAAAAAGoAAAAAAAAAawAAAAAAAAAAAAAAawAAAAAAAABrAAAAAAAAAAAAAABrAAAAAAAAAGwAAAAAAAAAAAAAAGwAAAAAAAAAbAAAAAAAAAAAAAAAbAAAAAAAAABtAAAAAAAAAAAAAABtAAAAAAAAAG0AAAAAAAAAAAAAAG0AAAAAAAAAbgAAAAAAAAAAAAAAbgAAAAAAAABuAAAAAAAAAAAAAABuAAAAAAAAAG8AAAAAAAAAAAAAAG8AAAAAAAAAbwAAAAAAAAAAAAAAbwAAAAAAAABwAAAAAAAAAAAAAABwAAAAAAAAAHAAAAAAAAAAAAAAAHAAAAAAAAAAcQAAAAAAAAAAAAAAcQAAAAAAAABxAAAAAAAAAAAAAABxAAAAAAAAAHIAAAAAAAAAAAAAAHIAAAAAAAAAcgAAAAAAAAAAAAAAcgAAAAAAAABzAAAAAAAAAAAAAABzAAAAAAAAAHMAAAAAAAAAAAAAAHMAAAAAAAAAdAAAAAAAAAAAAAAAdAAAAAAAAAB0AAAAAAAAAAAAAAB0AAAAAAAAAHUAAAAAAAAAAAAAAHUAAAAAAAAAdQAAAAAAAAAAAAAAdQAAAAAAAAB2AAAAAAAAAAAAAAB2AAAAAAAAAHYAAAAAAAAAAAAAAHYAAAAAAAAAdwAAAAAAAAAAAAAAdwAAAAAAAAB3AAAAAAAAAAAAAAB3AAAAAAAAAHgAAAAAAAAAAAAAAHgAAAAAAAAAeAAAAAAAAAAAAAAAeAAAAAAAAAB5AAAAAAAAAAAAAAB5AAAAAAAAAHkAAAAAAAAAAAAAAHkAAAAAAAAAegAAAAAAAAAAAAAAegAAAAAAAAB6AAAAAAAAAAAAAAB6AAAAAAAAAHsAAAAAAAAAAAAAAHsAAAAAAAAAewAAAAAAAAAAAAAAewAAAAAAAAB8AAAAAAAAAAAAAAB8AAAAAAAAAHwAAAAAAAAAAAAAAHwAAAAAAAAAfQAAAAAAAAAAAAAAfQAAAAAAAAB9AAAAAAAAAAAAAAB9AAAAAAAAAH4AAAAAAAAAAAAAAH4AAAAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAAAB/AAAAAAAAAAAAAAB/AAAAAAAAAH8AAAAAAAAAAAAAAH8AAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAIEAAAAAAAAAAAAAAIEAAAAAAAAAgQAAAAAAAAAAAAAAgQAAAAAAAACCAAAAAAAAAAAAAACCAAAAAAAAAIIAAAAAAAAAAAAAAIIAAAAAAAAAgwAAAAAAAAAAAAAAgwAAAAAAAACDAAAAAAAAAAAAAACDAAAAAAAAAIQAAAAAAAAAAAAAAIQAAAAAAAAAhAAAAAAAAAAAAAAAhAAAAAAAAACFAAAAAAAAAAAAAACFAAAAAAAAAIUAAAAAAAAAAAAAAIUAAAAAAAAAhgAAAAAAAAAAAAAAhgAAAAAAAACGAAAAAAAAAAAAAACGAAAAAAAAAIcAAAAAAAAAAAAAAIcAAAAAAAAAhwAAAAAAAAAAAAAAhwAAAAAAAACIAAAAAAAAAAAAAACIAAAAAAAAAIgAAAAAAAAAAAAAAIgAAAAAAAAAiQAAAAAAAAAAAAAAiQAAAAAAAACJAAAAAAAAAAAAAACJAAAAAAAAAIoAAAAAAAAAAAAAAIoAAAAAAAAAigAAAAAAAAAAAAAAigAAAAAAAACLAAAAAAAAAAAAAACLAAAAAAAAAIsAAAAAAAAAAAAAAIsAAAAAAAAAjAAAAAAAAAAAAAAAjAAAAAAAAACMAAAAAAAAAAAAAACMAAAAAAAAAI0AAAAAAAAAAAAAAI0AAAAAAAAAjQAAAAAAAAAAAAAAjQAAAAAAAACOAAAAAAAAAAAAAACOAAAAAAAAAI4AAAAAAAAAAAAAAI4AAAAAAAAAjwAAAAAAAAAAAAAAjwAAAAAAAACPAAAAAAAAAAAAAACPAAAAAAAAAJAAAAAAAAAAAAAAAJAAAAAAAAAAkAAAAAAAAAAAAAAAkAAAAAAAAACRAAAAAAAAAAAAAACRAAAAAAAAAJEAAAAAAAAAAAAAAJAAAAAAAAAAkAAAAAAAAAABAAAACo8AAAAAAAAAjwAAAAAAAAABAAAACo4AAAAAAAAAjgAAAAAAAAABAAAACo0AAAAAAAAAjQAAAAAAAAABAAAACowAAAAAAAAAjAAAAAAAAAABAAAACosAAAAAAAAAiwAAAAAAAAABAAAACooAAAAAAAAAigAAAAAAAAABAAAACokAAAAAAAAAiQAAAAAAAAABAAAACogAAAAAAAAAiAAAAAAAAAABAAAACocAAAAAAAAAhwAAAAAAAAABAAAACoYAAAAAAAAAhgAAAAAAAAABAAAACoUAAAAAAAAAhQAAAAAAAAABAAAACoQAAAAAAAAAhAAAAAAAAAABAAAACoMAAAAAAAAAgwAAAAAAAAABAAAACoIAAAAAAAAAggAAAAAAAAABAAAACoEAAAAAAAAAgQAAAAAAAAABAAAACoAAAAAAAAAAgAAAAAAAAAABAAAACn8AAAAAAAAAfwAAAAAAAAABAAAACn4AAAAAAAAAfgAAAAAAAAABAAAACn0AAAAAAAAAfQAAAAAAAAABAAAACnwAAAAAAAAAfAAAAAAAAAABAAAACnsAAAAAAAAAewAAAAAAAAABAAAACnoAAAAAAAAAegAAAAAAAAABAAAACnkAAAAAAAAAeQAAAAAAAAABAAAACngAAAAAAAAAeAAAAAAAAAABAAAACncAAAAAAAAAdwAAAAAAAAABAAAACnYAAAAAAAAAdgAAAAAAAAABAAAACnUAAAAAAAAAdQAAAAAAAAABAAAACnQAAAAAAAAAdAAAAAAAAAABAAAACnMAAAAAAAAAcwAAAAAAAAABAAAACnIAAAAAAAAAcgAAAAAAAAABAAAACnEAAAAAAAAAcQAAAAAAAAABAAAACnAAAAAAAAAAcAAAAAAAAAABAAAACm8AAAAAAAAAbwAAAAAAAAABAAAACm4AAAAAAAAAbgAAAAAAAAABAAAACm0AAAAAAAAAbQAAAAAAAAABAAAACmwAAAAAAAAAbAAAAAAAAAABAAAACmsAAAAAAAAAawAAAAAAAAABAAAACmoAAAAAAAAAagAAAAAAAAABAAAACmkAAAAAAAAAaQAAAAAAAAABAAAACmgAAAAAAAAAaAAAAAAAAAABAAAACmcAAAAAAAAAZwAAAAAAAAABAAAACmYAAAAAAAAAZgAAAAAAAAABAAAACmUAAAAAAAAAZQAAAAAAAAABAAAACmQAAAAAAAAAZAAAAAAAAAABAAAACmMAAAAAAAAAYwAAAAAAAAABAAAACi4AAAAAAAAALgAAAAAAAAA1AAAAICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAAAAAAAAAAAC0AAAAAAAAALgAAAGtyaXNoamFpbkBLcmlzaHMtTWFjQm9vay1BaXIgQ09MMjE2LTI1MDItQTIgJSAtAAAAAAAAAGMAAAAAAAAAAAAAAGMAAAAAAAAAZAAAAAAAAAAAAAAAZAAAAAAAAACRAAAAAAAAAAAAAACRAAAAAAAAAMcAAAAAAAAAAAAAAMcAAAAAAAAAyAAAAAAAAAAAAAAAyAAAAAAAAADIAAAAAAAAAAAAAADIAAAAAAAAAMkAAAAAAAAAAAAAAMkAAAAAAAAAyQAAAAAAAAAAAAAAyQAAAAAAAADKAAAAAAAAAAAAAADKAAAAAAAAAMoAAAAAAAAAAAAAAMoAAAAAAAAAywAAAAAAAAAAAAAAywAAAAAAAADLAAAAAAAAAAAAAADLAAAAAAAAAMwAAAAAAAAAAAAAAMwAAAAAAAAAzAAAAAAAAAAAAAAAzAAAAAAAAADNAAAAAAAAAAAAAADNAAAAAAAAAM0AAAAAAAAAAAAAAM0AAAAAAAAAzgAAAAAAAAAAAAAAzgAAAAAAAADOAAAAAAAAAAAAAADOAAAAAAAAAM8AAAAAAAAAAAAAAM8AAAAAAAAAzwAAAAAAAAAAAAAAzwAAAAAAAADQAAAAAAAAAAAAAADQAAAAAAAAANAAAAAAAAAAAAAAANAAAAAAAAAA0QAAAAAAAAAAAAAA0QAAAAAAAADRAAAAAAAAAAAAAADRAAAAAAAAANIAAAAAAAAAAAAAANIAAAAAAAAA0gAAAAAAAAAAAAAA0gAAAAAAAADTAAAAAAAAAAAAAADTAAAAAAAAANMAAAAAAAAAAAAAANMAAAAAAAAA1AAAAAAAAAAAAAAA1AAAAAAAAADUAAAAAAAAAAAAAADUAAAAAAAAANUAAAAAAAAAAAAAANUAAAAAAAAA1QAAAAAAAAAAAAAA1QAAAAAAAADWAAAAAAAAAAAAAADWAAAAAAAAANYAAAAAAAAAAAAAANYAAAAAAAAA1wAAAAAAAAAAAAAA1wAAAAAAAADXAAAAAAAAAAAAAADXAAAAAAAAANgAAAAAAAAAAAAAANgAAAAAAAAA2AAAAAAAAAAAAAAA2AAAAAAAAADZAAAAAAAAAAAAAADZAAAAAAAAANkAAAAAAAAAAAAAANkAAAAAAAAA2gAAAAAAAAAAAAAA2gAAAAAAAADaAAAAAAAAAAAAAADaAAAAAAAAANsAAAAAAAAAAAAAANsAAAAAAAAA2wAAAAAAAAAAAAAA2wAAAAAAAADcAAAAAAAAAAAAAADcAAAAAAAAANwAAAAAAAAAAAAAANwAAAAAAAAA3QAAAAAAAAAAAAAA3QAAAAAAAADdAAAAAAAAAAAAAADdAAAAAAAAAN4AAAAAAAAAAAAAAN4AAAAAAAAA3gAAAAAAAAAAAAAA3gAAAAAAAADfAAAAAAAAAAAAAADfAAAAAAAAAN8AAAAAAAAAAAAAAN8AAAAAAAAA4AAAAAAAAAAAAAAA4AAAAAAAAADgAAAAAAAAAAAAAADgAAAAAAAAAOEAAAAAAAAAAAAAAOEAAAAAAAAA4QAAAAAAAAAAAAAA4QAAAAAAAADiAAAAAAAAAAAAAADiAAAAAAAAAOIAAAAAAAAAAAAAAOIAAAAAAAAA4wAAAAAAAAAAAAAA4wAAAAAAAADjAAAAAAAAAAAAAADjAAAAAAAAAOQAAAAAAAAAAAAAAOQAAAAAAAAA5AAAAAAAAAAAAAAA5AAAAAAAAADlAAAAAAAAAAAAAADlAAAAAAAAAOUAAAAAAAAAAAAAAOUAAAAAAAAA5gAAAAAAAAAAAAAA5gAAAAAAAADmAAAAAAAAAAAAAADmAAAAAAAAAOcAAAAAAAAAAAAAAOcAAAAAAAAA5wAAAAAAAAAAAAAA5wAAAAAAAADoAAAAAAAAAAAAAADoAAAAAAAAAOgAAAAAAAAAAAAAAOgAAAAAAAAA6QAAAAAAAAAAAAAA6QAAAAAAAADpAAAAAAAAAAAAAADpAAAAAAAAAOoAAAAAAAAAAAAAAOoAAAAAAAAA6gAAAAAAAAAAAAAA6gAAAAAAAADrAAAAAAAAAAAAAADrAAAAAAAAAOsAAAAAAAAAAAAAAOsAAAAAAAAA7AAAAAAAAAAAAAAA7AAAAAAAAADsAAAAAAAAAAAAAADsAAAAAAAAAO0AAAAAAAAAAAAAAO0AAAAAAAAA7QAAAAAAAAAAAAAA7QAAAAAAAADuAAAAAAAAAAAAAADuAAAAAAAAAO4AAAAAAAAAAAAAAO4AAAAAAAAA7wAAAAAAAAAAAAAA7wAAAAAAAADvAAAAAAAAAAAAAADvAAAAAAAAAPAAAAAAAAAAAAAAAPAAAAAAAAAA8AAAAAAAAAAAAAAA8AAAAAAAAADxAAAAAAAAAAAAAADxAAAAAAAAAPEAAAAAAAAAAAAAAPEAAAAAAAAA8gAAAAAAAAAAAAAA8gAAAAAAAADyAAAAAAAAAAAAAADyAAAAAAAAAPMAAAAAAAAAAAAAAPMAAAAAAAAA8wAAAAAAAAAAAAAA8wAAAAAAAAD0AAAAAAAAAAAAAAD0AAAAAAAAAPQAAAAAAAAAAAAAAPQAAAAAAAAA9QAAAAAAAAAAAAAA9QAAAAAAAAD1AAAAAAAAAAAAAAD0AAAAAAAAAPQAAAAAAAAAAQAAAArzAAAAAAAAAPMAAAAAAAAAAQAAAAryAAAAAAAAAPIAAAAAAAAAAQAAAArxAAAAAAAAAPEAAAAAAAAAAQAAAArwAAAAAAAAAPAAAAAAAAAAAQAAAArvAAAAAAAAAO8AAAAAAAAAAQAAAAruAAAAAAAAAO4AAAAAAAAAAQAAAArtAAAAAAAAAO0AAAAAAAAAAQAAAArsAAAAAAAAAOwAAAAAAAAAAQAAAArrAAAAAAAAAOsAAAAAAAAAAQAAAArqAAAAAAAAAOoAAAAAAAAAAQAAAArpAAAAAAAAAOkAAAAAAAAAAQAAAAroAAAAAAAAAOgAAAAAAAAAAQAAAArnAAAAAAAAAOcAAAAAAAAAAQAAAArmAAAAAAAAAOYAAAAAAAAAAQAAAArlAAAAAAAAAOUAAAAAAAAAAQAAAArkAAAAAAAAAOQAAAAAAAAAAQAAAArjAAAAAAAAAOMAAAAAAAAAAQAAAAriAAAAAAAAAOIAAAAAAAAAAQAAAArhAAAAAAAAAOEAAAAAAAAAAQAAAArgAAAAAAAAAOAAAAAAAAAAAQAAAArfAAAAAAAAAN8AAAAAAAAAAQAAAAreAAAAAAAAAN4AAAAAAAAAAQAAAArdAAAAAAAAAN0AAAAAAAAAAQAAAArcAAAAAAAAANwAAAAAAAAAAQAAAArbAAAAAAAAANsAAAAAAAAAAQAAAAraAAAAAAAAANoAAAAAAAAAAQAAAArZAAAAAAAAANkAAAAAAAAAAQAAAArYAAAAAAAAANgAAAAAAAAAAQAAAArXAAAAAAAAANcAAAAAAAAAAQAAAArWAAAAAAAAANYAAAAAAAAAAQAAAArVAAAAAAAAANUAAAAAAAAAAQAAAArUAAAAAAAAANQAAAAAAAAAAQAAAArTAAAAAAAAANMAAAAAAAAAAQAAAArSAAAAAAAAANIAAAAAAAAAAQAAAArRAAAAAAAAANEAAAAAAAAAAQAAAArQAAAAAAAAANAAAAAAAAAAAQAAAArPAAAAAAAAAM8AAAAAAAAAAQAAAArOAAAAAAAAAM4AAAAAAAAAAQAAAArNAAAAAAAAAM0AAAAAAAAAAQAAAArMAAAAAAAAAMwAAAAAAAAAAQAAAArLAAAAAAAAAMsAAAAAAAAAAQAAAArKAAAAAAAAAMoAAAAAAAAAAQAAAArJAAAAAAAAAMkAAAAAAAAAAQAAAArIAAAAAAAAAMgAAAAAAAAAAQAAAArHAAAAAAAAAMcAAAAAAAAAAQAAAAqSAAAAAAAAAJIAAAAAAAAANQAAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg",
+					"AQAAAAAAAAABAAAALgAAAAAAAAAuAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "/Users/krishjain/Desktop/COL216-2502-A2/src/CommonDataBus.cpp",
+			"redo_stack":
+			[
+				[
+					79,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 3
+									},
+									"start":
+									{
+										"character": 57,
+										"line": 2
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 7
+									},
+									"start":
+									{
+										"character": 19,
+										"line": 6
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 0,
+										"line": 8
+									},
+									"start":
+									{
+										"character": 23,
+										"line": 7
+									}
+								}
+							}
+						],
+						"label": "Format on Save",
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"AwAAAGAAAAAAAAAAYgAAAAAAAAADAAAACiAgoQAAAAAAAACjAAAAAAAAAAEAAAAguQAAAAAAAAC6AAAAAAAAAAEAAAAg",
+					"AQAAAAAAAAABAAAAjgAAAAAAAACOAAAAAAAAAAAAAAAAAPC/"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 187,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					36,
+					1,
+					"left_delete",
+					null,
+					"AQAAAGEAAAAAAAAAYQAAAAAAAAABAAAACQ",
+					"AQAAAAAAAAABAAAAYgAAAAAAAABiAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					46,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAGEAAAAAAAAAYgAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYQAAAAAAAABhAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "/Users/krishjain/Desktop/COL216-2502-A2/src/LoadStoreQueue.cpp",
+			"redo_stack":
+			[
+				[
+					82,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 59,
+										"line": 4
+									},
+									"start":
+									{
+										"character": 58,
+										"line": 4
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 5
+									},
+									"start":
+									{
+										"character": 99,
+										"line": 4
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 6
+									},
+									"start":
+									{
+										"character": 26,
+										"line": 5
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 10
+									},
+									"start":
+									{
+										"character": 37,
+										"line": 9
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 0,
+										"line": 11
+									},
+									"start":
+									{
+										"character": 11,
+										"line": 10
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 14
+									},
+									"start":
+									{
+										"character": 37,
+										"line": 13
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 0,
+										"line": 15
+									},
+									"start":
+									{
+										"character": 22,
+										"line": 14
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 18
+									},
+									"start":
+									{
+										"character": 49,
+										"line": 17
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 15,
+										"line": 18
+									},
+									"start":
+									{
+										"character": 14,
+										"line": 18
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 19
+									},
+									"start":
+									{
+										"character": 28,
+										"line": 18
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 20
+									},
+									"start":
+									{
+										"character": 23,
+										"line": 19
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 21
+									},
+									"start":
+									{
+										"character": 29,
+										"line": 20
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 22
+									},
+									"start":
+									{
+										"character": 6,
+										"line": 21
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 37,
+										"line": 25
+									},
+									"start":
+									{
+										"character": 37,
+										"line": 25
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 39,
+										"line": 25
+									},
+									"start":
+									{
+										"character": 38,
+										"line": 25
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 26
+									},
+									"start":
+									{
+										"character": 45,
+										"line": 25
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 36,
+										"line": 26
+									},
+									"start":
+									{
+										"character": 35,
+										"line": 26
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 27
+									},
+									"start":
+									{
+										"character": 43,
+										"line": 26
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 28
+									},
+									"start":
+									{
+										"character": 14,
+										"line": 27
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 29
+									},
+									"start":
+									{
+										"character": 43,
+										"line": 28
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 30
+									},
+									"start":
+									{
+										"character": 41,
+										"line": 29
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 31
+									},
+									"start":
+									{
+										"character": 37,
+										"line": 30
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 32
+									},
+									"start":
+									{
+										"character": 22,
+										"line": 31
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 33
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 32
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 34
+									},
+									"start":
+									{
+										"character": 41,
+										"line": 33
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 35
+									},
+									"start":
+									{
+										"character": 37,
+										"line": 34
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 36
+									},
+									"start":
+									{
+										"character": 22,
+										"line": 35
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 37
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 36
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 38
+									},
+									"start":
+									{
+										"character": 24,
+										"line": 37
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 42
+									},
+									"start":
+									{
+										"character": 30,
+										"line": 41
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 10,
+										"line": 42
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 42
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 12,
+										"line": 42
+									},
+									"start":
+									{
+										"character": 11,
+										"line": 42
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 43
+									},
+									"start":
+									{
+										"character": 31,
+										"line": 42
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 44
+									},
+									"start":
+									{
+										"character": 22,
+										"line": 43
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 45
+									},
+									"start":
+									{
+										"character": 25,
+										"line": 44
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 46
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 45
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 46
+									},
+									"start":
+									{
+										"character": 4,
+										"line": 46
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 24,
+										"line": 46
+									},
+									"start":
+									{
+										"character": 23,
+										"line": 46
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 47
+									},
+									"start":
+									{
+										"character": 40,
+										"line": 46
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 48
+									},
+									"start":
+									{
+										"character": 28,
+										"line": 47
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 52
+									},
+									"start":
+									{
+										"character": 28,
+										"line": 51
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 14,
+										"line": 52
+									},
+									"start":
+									{
+										"character": 13,
+										"line": 52
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 53
+									},
+									"start":
+									{
+										"character": 21,
+										"line": 52
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 54
+									},
+									"start":
+									{
+										"character": 29,
+										"line": 53
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 55
+									},
+									"start":
+									{
+										"character": 29,
+										"line": 54
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 59
+									},
+									"start":
+									{
+										"character": 33,
+										"line": 58
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 51,
+										"line": 59
+									},
+									"start":
+									{
+										"character": 50,
+										"line": 59
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 60
+									},
+									"start":
+									{
+										"character": 58,
+										"line": 59
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 61
+									},
+									"start":
+									{
+										"character": 14,
+										"line": 60
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 62
+									},
+									"start":
+									{
+										"character": 43,
+										"line": 61
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 63
+									},
+									"start":
+									{
+										"character": 30,
+										"line": 62
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 64
+									},
+									"start":
+									{
+										"character": 52,
+										"line": 63
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 65
+									},
+									"start":
+									{
+										"character": 32,
+										"line": 64
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 66
+									},
+									"start":
+									{
+										"character": 37,
+										"line": 65
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 67
+									},
+									"start":
+									{
+										"character": 29,
+										"line": 66
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 68
+									},
+									"start":
+									{
+										"character": 4,
+										"line": 67
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 69
+									},
+									"start":
+									{
+										"character": 9,
+										"line": 68
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 70
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 69
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 71
+									},
+									"start":
+									{
+										"character": 24,
+										"line": 70
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 56,
+										"line": 74
+									},
+									"start":
+									{
+										"character": 56,
+										"line": 74
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 58,
+										"line": 74
+									},
+									"start":
+									{
+										"character": 57,
+										"line": 74
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 75
+									},
+									"start":
+									{
+										"character": 67,
+										"line": 74
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 19,
+										"line": 75
+									},
+									"start":
+									{
+										"character": 18,
+										"line": 75
+									}
+								}
+							},
+							{
+								"newText": "\n\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 77
+									},
+									"start":
+									{
+										"character": 26,
+										"line": 75
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 78
+									},
+									"start":
+									{
+										"character": 29,
+										"line": 77
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 9,
+										"line": 78
+									},
+									"start":
+									{
+										"character": 9,
+										"line": 78
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 11,
+										"line": 78
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 78
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 79
+									},
+									"start":
+									{
+										"character": 43,
+										"line": 78
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 80
+									},
+									"start":
+									{
+										"character": 25,
+										"line": 79
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 81
+									},
+									"start":
+									{
+										"character": 17,
+										"line": 80
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 82
+									},
+									"start":
+									{
+										"character": 37,
+										"line": 81
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 83
+									},
+									"start":
+									{
+										"character": 57,
+										"line": 82
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 84
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 83
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 85
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 84
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 86
+									},
+									"start":
+									{
+										"character": 34,
+										"line": 85
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 87
+									},
+									"start":
+									{
+										"character": 31,
+										"line": 86
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 88
+									},
+									"start":
+									{
+										"character": 17,
+										"line": 87
+									}
+								}
+							},
+							{
+								"newText": "\n          ",
+								"range":
+								{
+									"end":
+									{
+										"character": 5,
+										"line": 89
+									},
+									"start":
+									{
+										"character": 35,
+										"line": 88
+									}
+								}
+							},
+							{
+								"newText": "\n            ",
+								"range":
+								{
+									"end":
+									{
+										"character": 6,
+										"line": 90
+									},
+									"start":
+									{
+										"character": 68,
+										"line": 89
+									}
+								}
+							},
+							{
+								"newText": "\n          ",
+								"range":
+								{
+									"end":
+									{
+										"character": 5,
+										"line": 91
+									},
+									"start":
+									{
+										"character": 29,
+										"line": 90
+									}
+								}
+							},
+							{
+								"newText": "\n          ",
+								"range":
+								{
+									"end":
+									{
+										"character": 5,
+										"line": 92
+									},
+									"start":
+									{
+										"character": 6,
+										"line": 91
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 93
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 92
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 94
+									},
+									"start":
+									{
+										"character": 5,
+										"line": 93
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 95
+									},
+									"start":
+									{
+										"character": 4,
+										"line": 94
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 96
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 95
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 33,
+										"line": 96
+									},
+									"start":
+									{
+										"character": 32,
+										"line": 96
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 74,
+										"line": 96
+									},
+									"start":
+									{
+										"character": 73,
+										"line": 96
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 97
+									},
+									"start":
+									{
+										"character": 77,
+										"line": 96
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 98
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 97
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 99
+									},
+									"start":
+									{
+										"character": 40,
+										"line": 98
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 100
+									},
+									"start":
+									{
+										"character": 32,
+										"line": 99
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 101
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 100
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 102
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 101
+									}
+								}
+							}
+						],
+						"label": "Format on Save",
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"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ICAgICAg8AcAAAAAAAD1BwAAAAAAAAkAAAAKICAgICAgICACCAAAAAAAAAcIAAAAAAAACQAAAAogICAgICAgICYIAAAAAAAALAgAAAAAAAALAAAACiAgICAgICAgICBrCAAAAAAAAHIIAAAAAAAADQAAAAogICAgICAgICAgICCJCAAAAAAAAI8IAAAAAAAACwAAAAogICAgICAgICAgkAgAAAAAAACWCAAAAAAAAAsAAAAKICAgICAgICAgIKwIAAAAAAAAsQgAAAAAAAAJAAAACiAgICAgICAgsggAAAAAAAC2CAAAAAAAAAcAAAAKICAgICAgtwgAAAAAAAC6CAAAAAAAAAUAAAAKICAgILsIAAAAAAAAvggAAAAAAAAFAAAACiAgICDcCAAAAAAAAN0IAAAAAAAAAAAAAAUJAAAAAAAABgkAAAAAAAAAAAAACQkAAAAAAAALCQAAAAAAAAMAAAAKICAMCQAAAAAAAA4JAAAAAAAAAwAAAAogIDUJAAAAAAAAOAkAAAAAAAAFAAAACiAgICBWCQAAAAAAAFgJAAAAAAAAAwAAAAogIFkJAAAAAAAAWwkAAAAAAAADAAAACiAgdQkAAAAAAAB3CQAAAAAAAAMAAAAKICA",
+					"AQAAAAAAAAABAAAACAIAAAAAAAAIAgAAAAAAAAAAAAAAAPC/"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 2455,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					36,
+					1,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"
+					},
+					"AQAAAOwBAAAAAAAA7AEAAAAAAAANAAAACXJldHVybiB0cnVlOw",
+					"AQAAAAAAAAABAAAA+QEAAAAAAAD5AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					37,
+					1,
+					"left_delete",
+					null,
+					"AQAAAOsBAAAAAAAA6wEAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAA7AEAAAAAAADsAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					56,
+					1,
+					"insert",
+					{
+						"characters": "\nre"
+					},
+					"AwAAAOsBAAAAAAAA7QEAAAAAAAAAAAAA7QEAAAAAAADuAQAAAAAAAAAAAADuAQAAAAAAAO8BAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA6wEAAAAAAADrAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					58,
+					1,
+					"insert",
+					{
+						"characters": "r"
+					},
+					"AQAAAO8BAAAAAAAA8AEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA7wEAAAAAAADvAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					59,
+					1,
+					"left_delete",
+					null,
+					"AQAAAO8BAAAAAAAA7wEAAAAAAAABAAAAcg",
+					"AQAAAAAAAAABAAAA8AEAAAAAAADwAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					60,
+					1,
+					"insert",
+					{
+						"characters": "turn"
+					},
+					"BAAAAO8BAAAAAAAA8AEAAAAAAAAAAAAA8AEAAAAAAADxAQAAAAAAAAAAAADxAQAAAAAAAPIBAAAAAAAAAAAAAPIBAAAAAAAA8wEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA7wEAAAAAAADvAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					61,
+					1,
+					"insert",
+					{
+						"characters": " r"
+					},
+					"AgAAAPMBAAAAAAAA9AEAAAAAAAAAAAAA9AEAAAAAAAD1AQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA8wEAAAAAAADzAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					62,
+					1,
+					"left_delete",
+					null,
+					"AQAAAPQBAAAAAAAA9AEAAAAAAAABAAAAcg",
+					"AQAAAAAAAAABAAAA9QEAAAAAAAD1AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					63,
+					1,
+					"insert",
+					{
+						"characters": "tr"
+					},
+					"AgAAAPQBAAAAAAAA9QEAAAAAAAAAAAAA9QEAAAAAAAD2AQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9AEAAAAAAAD0AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					64,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":0,\"session_name\":\"clangd\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							25,
+							63,
+							2
+						],
+						"trigger": "true"
+					},
+					"AgAAAPQBAAAAAAAA9AEAAAAAAAACAAAAdHL0AQAAAAAAAPgBAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9gEAAAAAAAD2AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					65,
+					1,
+					"insert",
+					{
+						"characters": ";"
+					},
+					"AQAAAPgBAAAAAAAA+QEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA+AEAAAAAAAD4AQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "/Users/krishjain/Desktop/COL216-2502-A2/src/ExecutionUnit.cpp",
+			"redo_stack":
+			[
+				[
+					44,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 56,
+										"line": 3
+									},
+									"start":
+									{
+										"character": 55,
+										"line": 3
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 4
+									},
+									"start":
+									{
+										"character": 90,
+										"line": 3
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 8
+									},
+									"start":
+									{
+										"character": 29,
+										"line": 7
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 10,
+										"line": 8
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 8
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 12,
+										"line": 8
+									},
+									"start":
+									{
+										"character": 11,
+										"line": 8
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 9
+									},
+									"start":
+									{
+										"character": 31,
+										"line": 8
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 10
+									},
+									"start":
+									{
+										"character": 22,
+										"line": 9
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 11
+									},
+									"start":
+									{
+										"character": 25,
+										"line": 10
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 12
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 11
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 13
+									},
+									"start":
+									{
+										"character": 28,
+										"line": 12
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 17
+									},
+									"start":
+									{
+										"character": 32,
+										"line": 16
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 24,
+										"line": 17
+									},
+									"start":
+									{
+										"character": 23,
+										"line": 17
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 18
+									},
+									"start":
+									{
+										"character": 31,
+										"line": 17
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 8,
+										"line": 18
+									},
+									"start":
+									{
+										"character": 8,
+										"line": 18
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 10,
+										"line": 18
+									},
+									"start":
+									{
+										"character": 9,
+										"line": 18
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 19
+									},
+									"start":
+									{
+										"character": 38,
+										"line": 18
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 19
+									},
+									"start":
+									{
+										"character": 4,
+										"line": 19
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 20
+									},
+									"start":
+									{
+										"character": 32,
+										"line": 19
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 62,
+										"line": 20
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 20
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 21
+									},
+									"start":
+									{
+										"character": 79,
+										"line": 20
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 5,
+										"line": 21
+									},
+									"start":
+									{
+										"character": 5,
+										"line": 21
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 35,
+										"line": 21
+									},
+									"start":
+									{
+										"character": 34,
+										"line": 21
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 22
+									},
+									"start":
+									{
+										"character": 38,
+										"line": 21
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 23
+									},
+									"start":
+									{
+										"character": 31,
+										"line": 22
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 24
+									},
+									"start":
+									{
+										"character": 4,
+										"line": 23
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 10,
+										"line": 24
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 24
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 64,
+										"line": 24
+									},
+									"start":
+									{
+										"character": 64,
+										"line": 24
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 25
+									},
+									"start":
+									{
+										"character": 65,
+										"line": 24
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 26
+									},
+									"start":
+									{
+										"character": 31,
+										"line": 25
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 27
+									},
+									"start":
+									{
+										"character": 4,
+										"line": 26
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 28
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 27
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 29
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 28
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 29
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 29
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 30
+									},
+									"start":
+									{
+										"character": 24,
+										"line": 29
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 31
+									},
+									"start":
+									{
+										"character": 38,
+										"line": 30
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 32
+									},
+									"start":
+									{
+										"character": 41,
+										"line": 31
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 33
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 32
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 37
+									},
+									"start":
+									{
+										"character": 36,
+										"line": 36
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 38
+									},
+									"start":
+									{
+										"character": 29,
+										"line": 37
+									}
+								}
+							},
+							{
+								"newText": " ",
+								"range":
+								{
+									"end":
+									{
+										"character": 9,
+										"line": 38
+									},
+									"start":
+									{
+										"character": 9,
+										"line": 38
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 11,
+										"line": 38
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 38
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 39
+									},
+									"start":
+									{
+										"character": 43,
+										"line": 38
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 40
+									},
+									"start":
+									{
+										"character": 17,
+										"line": 39
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 41
+									},
+									"start":
+									{
+										"character": 25,
+										"line": 40
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 42
+									},
+									"start":
+									{
+										"character": 25,
+										"line": 41
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 43
+									},
+									"start":
+									{
+										"character": 23,
+										"line": 42
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 44
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 43
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 45
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 44
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 45,
+										"line": 45
+									},
+									"start":
+									{
+										"character": 44,
+										"line": 45
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 46
+									},
+									"start":
+									{
+										"character": 62,
+										"line": 45
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 47
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 46
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 48
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 47
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 49
+									},
+									"start":
+									{
+										"character": 21,
+										"line": 48
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 50
+									},
+									"start":
+									{
+										"character": 49,
+										"line": 49
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 45,
+										"line": 50
+									},
+									"start":
+									{
+										"character": 44,
+										"line": 50
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 51
+									},
+									"start":
+									{
+										"character": 62,
+										"line": 50
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 52
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 51
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 53
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 52
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 54
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 53
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 55
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 54
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 45,
+										"line": 55
+									},
+									"start":
+									{
+										"character": 44,
+										"line": 55
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 56
+									},
+									"start":
+									{
+										"character": 62,
+										"line": 55
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 57
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 56
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 58
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 57
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 59
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 58
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 60
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 59
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 45,
+										"line": 60
+									},
+									"start":
+									{
+										"character": 44,
+										"line": 60
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 61
+									},
+									"start":
+									{
+										"character": 62,
+										"line": 60
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 62
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 61
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 63
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 62
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 64
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 63
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 25,
+										"line": 64
+									},
+									"start":
+									{
+										"character": 24,
+										"line": 64
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 65
+									},
+									"start":
+									{
+										"character": 42,
+										"line": 64
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 9,
+										"line": 65
+									},
+									"start":
+									{
+										"character": 8,
+										"line": 65
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 66
+									},
+									"start":
+									{
+										"character": 42,
+										"line": 65
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 67
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 66
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 68
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 67
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 25,
+										"line": 68
+									},
+									"start":
+									{
+										"character": 24,
+										"line": 68
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 69
+									},
+									"start":
+									{
+										"character": 42,
+										"line": 68
+									}
+								}
+							},
+							{
+								"newText": "\n        ",
+								"range":
+								{
+									"end":
+									{
+										"character": 9,
+										"line": 69
+									},
+									"start":
+									{
+										"character": 8,
+										"line": 69
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 4,
+										"line": 70
+									},
+									"start":
+									{
+										"character": 42,
+										"line": 69
+									}
+								}
+							},
+							{
+								"newText": "\n\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 72
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 70
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 21,
+										"line": 72
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 72
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 65,
+										"line": 72
+									},
+									"start":
+									{
+										"character": 64,
+										"line": 72
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 73
+									},
+									"start":
+									{
+										"character": 71,
+										"line": 72
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 22,
+										"line": 73
+									},
+									"start":
+									{
+										"character": 21,
+										"line": 73
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 65,
+										"line": 73
+									},
+									"start":
+									{
+										"character": 64,
+										"line": 73
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 74
+									},
+									"start":
+									{
+										"character": 71,
+										"line": 73
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 21,
+										"line": 74
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 74
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 55,
+										"line": 74
+									},
+									"start":
+									{
+										"character": 54,
+										"line": 74
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 75
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 74
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 22,
+										"line": 75
+									},
+									"start":
+									{
+										"character": 21,
+										"line": 75
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 55,
+										"line": 75
+									},
+									"start":
+									{
+										"character": 54,
+										"line": 75
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 76
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 75
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 20,
+										"line": 76
+									},
+									"start":
+									{
+										"character": 19,
+										"line": 76
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 54,
+										"line": 76
+									},
+									"start":
+									{
+										"character": 53,
+										"line": 76
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 77
+									},
+									"start":
+									{
+										"character": 60,
+										"line": 76
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 21,
+										"line": 77
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 77
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 54,
+										"line": 77
+									},
+									"start":
+									{
+										"character": 53,
+										"line": 77
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 78
+									},
+									"start":
+									{
+										"character": 60,
+										"line": 77
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 21,
+										"line": 78
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 78
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 55,
+										"line": 78
+									},
+									"start":
+									{
+										"character": 54,
+										"line": 78
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 79
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 78
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 22,
+										"line": 79
+									},
+									"start":
+									{
+										"character": 21,
+										"line": 79
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 55,
+										"line": 79
+									},
+									"start":
+									{
+										"character": 54,
+										"line": 79
+									}
+								}
+							},
+							{
+								"newText": "\n\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 81
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 79
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 21,
+										"line": 81
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 81
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 66,
+										"line": 81
+									},
+									"start":
+									{
+										"character": 65,
+										"line": 81
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 82
+									},
+									"start":
+									{
+										"character": 72,
+										"line": 81
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 21,
+										"line": 82
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 82
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 66,
+										"line": 82
+									},
+									"start":
+									{
+										"character": 65,
+										"line": 82
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 83
+									},
+									"start":
+									{
+										"character": 72,
+										"line": 82
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 21,
+										"line": 83
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 83
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 65,
+										"line": 83
+									},
+									"start":
+									{
+										"character": 64,
+										"line": 83
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 84
+									},
+									"start":
+									{
+										"character": 71,
+										"line": 83
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 21,
+										"line": 84
+									},
+									"start":
+									{
+										"character": 20,
+										"line": 84
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 66,
+										"line": 84
+									},
+									"start":
+									{
+										"character": 65,
+										"line": 84
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 85
+									},
+									"start":
+									{
+										"character": 72,
+										"line": 84
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 19,
+										"line": 85
+									},
+									"start":
+									{
+										"character": 18,
+										"line": 85
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 31,
+										"line": 85
+									},
+									"start":
+									{
+										"character": 30,
+										"line": 85
+									}
+								}
+							},
+							{
+								"newText": "\n\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 3,
+										"line": 87
+									},
+									"start":
+									{
+										"character": 37,
+										"line": 85
+									}
+								}
+							},
+							{
+								"newText": "\n      ",
+								"range":
+								{
+									"end":
+									{
+										"character": 12,
+										"line": 87
+									},
+									"start":
+									{
+										"character": 11,
+										"line": 87
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 88
+									},
+									"start":
+									{
+										"character": 18,
+										"line": 87
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 89
+									},
+									"start":
+									{
+										"character": 3,
+										"line": 88
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 90
+									},
+									"start":
+									{
+										"character": 24,
+										"line": 89
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 91
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 90
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 92
+									},
+									"start":
+									{
+										"character": 75,
+										"line": 91
+									}
+								}
+							},
+							{
+								"newText": "\n\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 94
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 92
+									}
+								}
+							},
+							{
+								"newText": "\n    ",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 95
+									},
+									"start":
+									{
+										"character": 40,
+										"line": 94
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 96
+									},
+									"start":
+									{
+										"character": 32,
+										"line": 95
+									}
+								}
+							},
+							{
+								"newText": "\n\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 98
+									},
+									"start":
+									{
+										"character": 2,
+										"line": 96
+									}
+								}
+							},
+							{
+								"newText": "\n  ",
+								"range":
+								{
+									"end":
+									{
+										"character": 1,
+										"line": 99
+									},
+									"start":
+									{
+										"character": 27,
+										"line": 98
+									}
+								}
+							},
+							{
+								"newText": "\n",
+								"range":
+								{
+									"end":
+									{
+										"character": 0,
+										"line": 103
+									},
+									"start":
+									{
+										"character": 1,
+										"line": 100
+									}
+								}
+							}
+						],
+						"label": "Format on Save",
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"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"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 3230,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "BranchPredictor.h",
+			"settings":
+			{
+				"buffer_size": 302,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					6,
+					1,
+					"unexpand_tabs",
+					{
+						"set_translate_tabs": true
+					},
+					"AQAAAAAAAAAAAAAALgEAAAAAAAA9AQAAI3ByYWdtYSBvbmNlCiNpbmNsdWRlICJCYXNpY3MuaCIKI2luY2x1ZGUgPG1hcD4KCmNsYXNzIEJyYW5jaFByZWRpY3RvciB7CnB1YmxpYzoKICAgIGludCB0b3RhbF9icmFuY2hlcyA9IDA7CiAgICBpbnQgY29ycmVjdF9wcmVkaWN0aW9ucyA9IDA7CiAgICBzdGQ6Om1hcCA8aW50LCBpbnQ+IHN0YXRlczsKCiAgICBpbnQgcHJlZGljdChjb25zdCBpbnQgJmN1cnJlbnRfcGMsIGNvbnN0IGludCAmaW1tKTsKICAgIHZvaWQgdXBkYXRlKGNvbnN0IGludCAmY3VycmVudF9wYywgY29uc3QgYm9vbCAmdGFrZW4sIGNvbnN0IGJvb2wgJndhc19jb3JyZWN0KTsKfTs",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvw"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++17.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++23.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/C++23.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++17.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++23.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/C++23.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++17.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++17.sublime-build",
+					"Run Only"
+				]
+			],
+			[
+				"Packages/User/C++17.sublime-build",
+				"Run Only"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++17.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++23.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/C++23.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++23.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/C++23.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/Python3.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/Python3.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Pre",
+				"Preferences: Settings"
+			],
+			[
+				"LSP",
+				"Preferences: LSP Settings"
+			],
+			[
+				"LSP: ",
+				"LSP: Goto Symbol"
+			],
+			[
+				"",
+				"Build With: C++23"
+			],
+			[
+				"LS",
+				"LSP: Enable Language Server in Project"
+			],
+			[
+				"LSP ",
+				"LSP Development: Parse VSCode Package JSON From Clipboard"
+			],
+			[
+				"Indentation",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"Indent",
+				"Help: Indexing Status"
+			],
+			[
+				"gi",
+				"git: diff"
+			],
+			[
+				"Prefer",
+				"Preferences: Settings"
+			],
+			[
+				"LSP: Relo",
+				"LSP: Rename Symbol"
+			],
+			[
+				"Pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"Ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Reload",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"Sub",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"Show",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"Sublime",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"Reloa",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"sublimeLi",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"SublimeLine",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"Setting",
+				"Preferences: Settings"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"git",
+				"git: status"
+			],
+			[
+				"gitSa",
+				"GitSavvy: help"
+			],
+			[
+				"pakins",
+				"Package Control: List Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"right",
+				"Terminus Utilities: Generate User Theme"
+			],
+			[
+				"refr",
+				"Project: Refresh Folders"
+			],
+			[
+				"termin",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"packages",
+				"Package Control: Install Package"
+			],
+			[
+				"buil",
+				"Build: New Build System"
+			],
+			[
+				"Build",
+				"Build: Cancel"
+			],
+			[
+				"TErm",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"Terminus",
+				"Preferences: Terminus View Settings"
+			],
+			[
+				"Termi",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"Rename",
+				"Preferences: Terminus Command Palette"
+			],
+			[
+				"Terminus: ",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"Package ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Ter",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"termina",
+				"Terminal: Open"
+			],
+			[
+				"pack",
+				"Package Control: New Channel…"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pacak",
+				"Package Control: List Packages"
+			],
+			[
+				"ke",
+				"Preferences: Key Bindings"
+			],
+			[
+				"refres",
+				"Project: Refresh Folders"
+			],
+			[
+				"set syn",
+				"Set Syntax: C++"
+			],
+			[
+				"BIT",
+				"Set Syntax: BibTeX"
+			],
+			[
+				"Set Syn",
+				"Set Syntax: C++"
+			],
+			[
+				"Tree",
+				"Set Syntax: Regular Expression"
+			],
+			[
+				"remoce",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Add Repository"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"prefere",
+				"Preferences: Browse Packages"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"k",
+				"Preferences: Key Bindings"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"subl",
+				"Build With: sublimerepl_build_system_hack"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: GDis",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: Dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: Install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 112.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/krishjain/Desktop/COL216-2502-A2",
+		"/Users/krishjain/Desktop/COL216-2502-A2/programs",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src"
+	],
+	"file_history":
+	[
+		"/Users/krishjain/Desktop/COL216-2502-A2/Makefile",
+		"/Users/krishjain/Desktop/COL216-2502-A2/.editorconfig",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/.editorconfig",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/ExecutionUnit.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/LoadStoreQueue.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/Parser.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/Basics.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/LoadStoreQueue.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/main.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/Parser.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/Preprocessor.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/ExecutionUnit.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/CommonDataBus.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/BranchPredictor.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/Processor.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/ReorderBuffer.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/src/ReservationStation.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/StringUtils.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/ReservationStation.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/ReorderBuffer.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/Processor.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/Preprocessor.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/OpCodeUtils.h",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/SublimeLinter-gcc/miscellaneous/demo.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/BranchPredictor.h",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/SublimeLinter-gcc/CHANGELOG.md",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/SublimeLinter-gcc/README.md",
+		"/Users/krishjain/Desktop/COL216-2502-A2/main",
+		"/Users/krishjain/Desktop/COL216-2502-A2/testcases/code1.txt",
+		"/Users/krishjain/Desktop/COL216-2502-A2/.gitignore",
+		"/Users/krishjain/Desktop/COL216-2502-A2/todo.md",
+		"/Users/krishjain/Desktop/COL216-2502-A2/testcases/code3.txt",
+		"/Users/krishjain/Desktop/COL216-2502-A2/testcases/ans3.txt",
+		"/Users/krishjain/Desktop/COL216-2502-A2/testcases/code5.txt",
+		"/Users/krishjain/Desktop/COL216-2502-A2/README.md",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/todo.md",
+		"/Users/krishjain/Desktop/COL216-2502-A2/logs/run_20260403_024849.log",
+		"/Users/krishjain/Desktop/COL216-2502-A2/include/CommonDataBus.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/ReorderBuffer.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/LoadStoreQueue.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/Processor.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/Preprocessor.cpp",
+		"/Users/krishjain/Desktop/COL216-2502-A2/test_out.s",
+		"/Users/krishjain/Desktop/COL216-2502-A2/BranchPredictor.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/Parser.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/ReservationStation.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/ExecutionUnit.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/Basics.h",
+		"/Users/krishjain/Desktop/COL216-2502-A2/lexer.l",
+		"/Users/krishjain/Desktop/COL216-2502-A2/test.s",
+		"/Users/krishjain/Desktop/COL216-2502-A2/main.cpp",
+		"/Users/krishjain/Desktop/CP/output.txt",
+		"/Users/krishjain/Desktop/CP/input.txt",
+		"/Users/krishjain/Desktop/CP/submit.cpp",
+		"/Users/krishjain/Desktop/CP/pbds.cpp",
+		"/Users/krishjain/Desktop/CP/Templates/PreProcess.cpp",
+		"/Users/krishjain/Desktop/CP/Templates/ModExp.cpp",
+		"/Users/krishjain/Desktop/CP/backup.cpp",
+		"/var/folders/kh/4l8l4k1d4j7bsm3zlg9phzsr0000gn/T/TemporaryItems/NSIRD_screencaptureui_nBLzwG/Screenshot 2026-03-21 at 1.39.50 PM.png",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/User/C++23.sublime-build",
+		"/Users/krishjain/Desktop/CP/Templates/Print.cpp",
+		"/Users/krishjain/Desktop/CP/CPP.txt",
+		"/Users/krishjain/Desktop/CP/.vscode/settings.json",
+		"/Users/krishjain/Desktop/CP/stdc++.h",
+		"/Users/krishjain/Desktop/CP/submit_backup.cpp",
+		"/Users/krishjain/Desktop/CP/yo/hlello.txt",
+		"/Users/krishjain/Desktop/CP/BellmanFord.cpp",
+		"/Users/krishjain/Desktop/CP/FloyedWarshall.cpp",
+		"/Users/krishjain/Desktop/CP/Print.cpp",
+		"/Users/krishjain/Desktop/CP/codefest.cpp",
+		"/Users/krishjain/Desktop/CP/Dijkstra.cpp",
+		"/Users/krishjain/Desktop/CP/notes.txt",
+		"/Users/krishjain/Desktop/CP/SGTree.cpp",
+		"/Users/krishjain/Desktop/CP/template.cpp",
+		"/Users/krishjain/Desktop/CP/LCA.cpp",
+		"/Users/krishjain/Desktop/CP/PreProcess.cpp",
+		"/Users/krishjain/Desktop/CP/TREE.cpp",
+		"/Users/krishjain/Desktop/CP/submit2.cpp",
+		"/Users/krishjain/Desktop/CP/BIT.cpp",
+		"/Users/krishjain/Desktop/CP/LazySGTree.cpp",
+		"/Users/krishjain/Desktop/CP/DSU.cpp",
+		"/Users/krishjain/Desktop/CP/ModExp.cpp",
+		"/Users/krishjain/Desktop/CP/RangeCompress.cpp",
+		"/Users/krishjain/Desktop/CP/sudoku.cnf",
+		"/Users/krishjain/Desktop/CP/LeftRightMax.cpp",
+		"/Users/krishjain/Desktop/CP/global-inventory.sh",
+		"/Users/krishjain/Desktop/CP/debug.txt",
+		"/Users/krishjain/Desktop/CP/bits:stdc++.h",
+		"/Users/krishjain/Desktop/CP/bits:stdc.h",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/HighlightWords/HighlightWords.sublime-settings",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/krishjain/Desktop/CP/.vscode/debug.txt",
+		"/Users/krishjain/Desktop/CP/2Dto1D.cpp",
+		"/Users/krishjain/Desktop/CP/.vscode/c_cpp_properties.json",
+		"/Users/krishjain/Desktop/CP/submit",
+		"/Users/krishjain/Desktop/CP/files/LazySGTree.cpp",
+		"/Users/krishjain/Desktop/CP/files/PreProcess.cpp",
+		"/Users/krishjain/Desktop/CP/files/BellmanFord.cpp",
+		"/Users/krishjain/Desktop/CP/files/BIT.cpp",
+		"/Users/krishjain/Desktop/CP/files/TREE.cpp",
+		"/Users/krishjain/Desktop/CP/files/LCA.cpp",
+		"/Users/krishjain/Desktop/CP/utils.cpp",
+		"/Users/krishjain/Desktop/CP/ds.cpp",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/sublime-rufo/sublime-rufo.sublime-settings",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/User/sublime-rufo.sublime-settings",
+		"/Users/krishjain/Desktop/CP/graphs.cpp",
+		"/Users/krishjain/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".clang",
+			".clang-format",
+			"indentation",
+			"Hello",
+			"hw",
+			"string",
+			"label",
+			"# ",
+			"Failed to parse",
+			"gggg",
+			"std::cout",
+			"opMapRev",
+			"x1",
+			"x10",
+			"BRANCH",
+			"PC: 18",
+			"Simulation",
+			"Next PC: 18",
+			"entries[i].val",
+			"entry.val",
+			"entry.busy",
+			"busy",
+			"entries[i].bu",
+			"entry.executing",
+			"entry.busy",
+			"LSQ.insert",
+			"buffer",
+			"LSQ.buffer",
+			"LSQ.lsq",
+			"rs_size",
+			"late",
+			"||",
+			"current_size",
+			"ROB.right",
+			"ROB",
+			"ROB.lef",
+			"right",
+			"left",
+			"right",
+			"left",
+			"latency",
+			"rs_size",
+			"new",
+			"current_",
+			"[last_stage]",
+			"RSInPipeline",
+			"map",
+			"parent->Vk",
+			"arent->Vj",
+			"parent->Vj",
+			"parent->Vk",
+			"parent->Vj",
+			"inPipetIns",
+			"pop",
+			"data.",
+			"ins",
+			"Preprocess",
+			"valid",
+			"bc.valid",
+			"mispredicted",
+			"isBranchInstruction",
+			"bp",
+			"int",
+			"flushed_this_cycle",
+			"flushed_thi",
+			"flush",
+			"CDB",
+			"bus",
+			"CDB",
+			"bp",
+			"98765",
+			"bus",
+			"busy",
+			"bu",
+			"bus",
+			"busy",
+			"bus",
+			"eus"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "CommonDataBus.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 144,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								88,
+								88
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".<>:\"/*",
+									"selector": "punctuation.accessor | (meta.preprocessor.include string - punctuation.definition.string.end)",
+									"server": "clangd"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/krishjain/Desktop/COL216-2502-A2/include/CommonDataBus.h",
+							"show_definitions": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/krishjain/Desktop/COL216-2502-A2/.clang-format",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8060,
+								8060
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								}
+							],
+							"lsp_uri": "file:///Users/krishjain/Desktop/COL216-2502-A2/.clang-format",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4635.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 93,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								}
+							],
+							"detect_indentation": false,
+							"line_numbers": false,
+							"lsp_uri": "buffer:151",
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/krishjain/Desktop/COL216-2502-A2/src/BranchPredictor.cpp",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 545,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								376,
+								376
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".<>:\"/*",
+									"selector": "punctuation.accessor | (meta.preprocessor.include string - punctuation.definition.string.end)",
+									"server": "clangd"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/krishjain/Desktop/COL216-2502-A2/src/BranchPredictor.cpp",
+							"show_definitions": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								146,
+								146
+							]
+						],
+						"settings":
+						{
+							"__vi_external_disable": true,
+							"auto_complete": false,
+							"auto_complete_commit_on_tab": false,
+							"bracket_highlighter.clone_locations":
+							{
+							},
+							"bracket_highlighter.ignore": true,
+							"color_scheme": "Terminus.hidden-color-scheme",
+							"draw_centered": false,
+							"draw_indent_guides": false,
+							"draw_unicode_white_space": false,
+							"draw_white_space": "none",
+							"gutter": false,
+							"highlight_line": false,
+							"is_widget": true,
+							"lsp_uri": "buffer:287",
+							"result_base_dir": "/Users/krishjain/Desktop/COL216-2502-A2",
+							"result_file_regex": null,
+							"result_line_regex": null,
+							"rulers":
+							[
+								500
+							],
+							"scroll_past_end": true,
+							"syntax": "Terminus View.sublime-syntax",
+							"terminus.highlight_counter": 1,
+							"terminus_view": true,
+							"terminus_view.args":
+							{
+								"auto_close": true,
+								"cancellable": false,
+								"cmd":
+								[
+									"/bin/zsh",
+									"-i",
+									"-l"
+								],
+								"cwd": "/Users/krishjain/Desktop/COL216-2502-A2",
+								"default_title": "Login Shell",
+								"env":
+								{
+									"LANG": "C.UTF-8",
+									"PROMPT_TOOLKIT_COLOR_DEPTH": "DEPTH_8_BIT",
+									"TERM": "xterm-256color",
+									"TERMINUS_SUBLIME": "1",
+									"TERM_PROGRAM": "Terminus-Sublime"
+								},
+								"file_regex": null,
+								"line_regex": null,
+								"panel_name": "Terminus",
+								"reactivable": true,
+								"show_in_panel": null,
+								"tag": null,
+								"timeit": false,
+								"title": null,
+								"view_settings":
+								{
+								}
+							},
+							"terminus_view.cancellable": false,
+							"terminus_view.key.ctrl+k": true,
+							"terminus_view.key.ctrl+p": true,
+							"terminus_view.natural_keyboard": true,
+							"terminus_view.reactivable": true,
+							"terminus_view.tag": null,
+							"terminus_view.viewport_y": 17.0,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 17.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/krishjain/Desktop/COL216-2502-A2/src/CommonDataBus.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 187,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".<>:\"/*",
+									"selector": "punctuation.accessor | (meta.preprocessor.include string - punctuation.definition.string.end)",
+									"server": "clangd"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/krishjain/Desktop/COL216-2502-A2/src/CommonDataBus.cpp",
+							"show_definitions": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/krishjain/Desktop/COL216-2502-A2/src/LoadStoreQueue.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								507,
+								507
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".<>:\"/*",
+									"selector": "punctuation.accessor | (meta.preprocessor.include string - punctuation.definition.string.end)",
+									"server": "clangd"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/krishjain/Desktop/COL216-2502-A2/src/LoadStoreQueue.cpp",
+							"show_definitions": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4
+						},
+						"translation.x": 0.0,
+						"translation.y": 243.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/krishjain/Desktop/COL216-2502-A2/src/ExecutionUnit.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								661,
+								661
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".<>:\"/*",
+									"selector": "punctuation.accessor | (meta.preprocessor.include string - punctuation.definition.string.end)",
+									"server": "clangd"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/krishjain/Desktop/COL216-2502-A2/src/ExecutionUnit.cpp",
+							"show_definitions": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "BranchPredictor.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".<>:\"/*",
+									"selector": "punctuation.accessor | (meta.preprocessor.include string - punctuation.definition.string.end)",
+									"server": "clangd"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/krishjain/Desktop/COL216-2502-A2/include/BranchPredictor.h",
+							"show_definitions": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.647697400747,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.487295165222,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.Terminus":
+	{
+		"height": 131.0,
+		"history":
+		[
+		]
+	},
+	"output.diagnostics":
+	{
+		"height": 78.0,
+		"history":
+		[
+		]
+	},
+	"output.exec":
+	{
+		"height": 124.0,
+		"history":
+		[
+			"4",
+			"1",
+			"2",
+			"3"
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.unsaved_changes":
+	{
+		"height": 124.0,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "Packages/User/C++23.sublime-build",
+	"project": "COL216.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"main"
+			],
+			[
+				"pre",
+				"Templates/PreProcess.cpp"
+			],
+			[
+				"mod",
+				"Templates/ModExp.cpp"
+			],
+			[
+				"pr",
+				"Templates/PreProcess.cpp"
+			],
+			[
+				"pro",
+				"Templates/PreProcess.cpp"
+			],
+			[
+				"pri",
+				"Templates/Print.cpp"
+			],
+			[
+				"std",
+				"stdc++.h"
+			],
+			[
+				"dij",
+				"Dijkstra.cpp"
+			],
+			[
+				"pp",
+				"PreProcess.cpp"
+			],
+			[
+				"Tre",
+				"TREE.cpp"
+			],
+			[
+				"subm",
+				"submit2.cpp"
+			],
+			[
+				"La",
+				"LazySGTree.cpp"
+			],
+			[
+				"SE",
+				"SGTree.cpp"
+			],
+			[
+				"DS",
+				"DSU.cpp"
+			],
+			[
+				"mo",
+				"ModExp.cpp"
+			],
+			[
+				"Se",
+				"SGTree.cpp"
+			],
+			[
+				"proc",
+				"PreProcess.cpp"
+			],
+			[
+				"prin",
+				"Print.cpp"
+			],
+			[
+				"SG",
+				"SGTree.cpp"
+			],
+			[
+				"com",
+				"RangeCompress.cpp"
+			],
+			[
+				"r",
+				"RangeCompress.cpp"
+			],
+			[
+				"la",
+				"LazySGTree.cpp"
+			],
+			[
+				"s",
+				"SGTree.cpp"
+			],
+			[
+				"pt",
+				"Print.cpp"
+			],
+			[
+				"p",
+				"Print.cpp"
+			],
+			[
+				"laz",
+				"LazySGTree.cpp"
+			],
+			[
+				"seg",
+				"SGTree.cpp"
+			],
+			[
+				"DSU",
+				"DSU.cpp"
+			],
+			[
+				"rih",
+				"LeftRightMax.cpp"
+			],
+			[
+				"righ",
+				"LeftRightMax.cpp"
+			],
+			[
+				"SGT",
+				"SGTree.cpp"
+			],
+			[
+				"print",
+				"Print.cpp"
+			],
+			[
+				"se",
+				"SGTree.cpp"
+			],
+			[
+				"ran",
+				"RangeCompress.cpp"
+			],
+			[
+				"BIT",
+				"BIT.cpp"
+			],
+			[
+				"sgr",
+				"SGTree.cpp"
+			],
+			[
+				"bell",
+				"files/BellmanFord.cpp"
+			],
+			[
+				"tre",
+				"files/TREE.cpp"
+			],
+			[
+				"Tree",
+				"files/TREE.cpp"
+			],
+			[
+				"sub",
+				"submit"
+			],
+			[
+				"ds",
+				"ds.cpp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 305.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"BLE"
+			]
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 198.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

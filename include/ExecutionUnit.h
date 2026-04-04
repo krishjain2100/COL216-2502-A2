@@ -8,17 +8,17 @@ inline constexpr long long NEGINF = -2147483648LL;
 
 class ExecutionUnit {
 public:
-    ReservationStation rs;
-    int latency;
-    
-    std::vector<PipelineMember> pipeline; 
-    std::vector<Broadcast> ready_to_broadcast; 
+	ReservationStation rs;
+	int latency;
+	
+	std::vector<PipelineMember> pipeline; 
+	std::vector<Broadcast> ready_to_broadcast; 
 
-    ExecutionUnit();
-    ExecutionUnit(int _latency, int rs_size);
+	ExecutionUnit();
+	ExecutionUnit(int _latency, int rs_size);
 
-    void flush();
-    void dispatch();
-    void executeCycle();
+	void flush();
+	void dispatch();
+	void executeCycle();
 };
 

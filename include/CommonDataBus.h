@@ -3,7 +3,7 @@
 
 class CDB {
 public:
-    Broadcast current;
-    void broadcast(int tag, int value, bool exception);
-    void clear();
+	Broadcast current;
+	void broadcast(int tag, int value, bool exception);
+	void clear();
 };

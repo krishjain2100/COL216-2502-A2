@@ -19,41 +19,41 @@
 
 class Processor {
 public:
-    int pc = 0;
-    int next_pc;
-    int pc_limit;
-    int clock_cycle = 0;
-    bool exception = false; 
-    bool flushed_this_cycle = 0;
+	int pc = 0;
+	int next_pc;
+	int pc_limit;
+	int clock_cycle = 0;
+	bool exception = false; 
+	bool flushed_this_cycle = 0;
 
-    Instruction* current_ins = nullptr;
+	Instruction* current_ins = nullptr;
 
-    std::vector<Instruction> inst_memory;
-    
-    std::vector<int> ARF; 
-    std::vector<int> Memory; 
-    std::vector<int> RAT;
-    std::map <UnitType, ExecutionUnit> EUS;
+	std::vector<Instruction> inst_memory;
+	
+	std::vector<int> ARF; 
+	std::vector<int> Memory; 
+	std::vector<int> RAT;
+	std::map <UnitType, ExecutionUnit> EUS;
 
-    ReorderBuffer ROB;
-    LoadStoreQueue LSQ;
-    CDB BUS;
-    BranchPredictor BP;
+	ReorderBuffer ROB;
+	LoadStoreQueue LSQ;
+	CDB BUS;
+	BranchPredictor BP;
 
-    std::ofstream log_file;
+	std::ofstream log_file;
 
-    
-    Processor(ProcessorConfig& config);
-    ~Processor();
-    void loadProgram(const std::string &filename);
+	
+	Processor(ProcessorConfig& config);
+	~Processor();
+	void loadProgram(const std::string &filename);
 
-    void listenAll();
-    void stageFetch();
-    void stageDecode();
-    void stageExecuteAndBroadcast();
-    void stageCommit();
-    void flush();
-    bool step();
-    void dumpArchitecturalState() const;
-    void setupLogging();
+	void listenAll();
+	void stageFetch();
+	void stageDecode();
+	void stageExecuteAndBroadcast();
+	void stageCommit();
+	void flush();
+	bool step();
+	void dumpArchitecturalState() const;
+	void setupLogging();
 };
