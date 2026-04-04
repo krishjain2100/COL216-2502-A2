@@ -41,10 +41,11 @@ struct Broadcast {
 
 struct ROBEntry {
    bool busy = false;
+   bool valid = false;
+   bool exception = false;
    Instruction ins;
    int dest; // reg number
    int value; 
-   bool exception = false;
    int predicted_pc = 0;
 };
 

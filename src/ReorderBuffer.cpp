@@ -14,9 +14,8 @@ int ReorderBuffer::getNextTag() const {
 }
 
 void ReorderBuffer::flush() {
-    head = 0;
-    tail = 0;
-    sz = 0;
+    head = tail = sz = 0;
+    for(auto &e : buffer) e.valid = false;
 }
 
 void ReorderBuffer::insert(const ROBEntry new_entry) {
@@ -28,7 +27,8 @@ void ReorderBuffer::insert(const ROBEntry new_entry) {
 
 void ReorderBuffer::remove() {
     if(isEmpty()) return;
-    sz--;
+    if(buffer[head].valid) sz--;
+    buffer[head].valid = false;
     buffer[head].busy = false;
     head = (head + 1) % rob_size;
     return;

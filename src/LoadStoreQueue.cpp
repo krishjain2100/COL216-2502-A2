@@ -44,14 +44,14 @@ void LoadStoreQueue::flush() {
         stage.valid = false;
         stage.parent = nullptr;
     }
+    for(auto &e : entries) e.valid = false;
     ready_to_broadcast.clear();
-    head = 0;
-    tail = 0;
-    sz = 0;
+    head = tail = sz = 0;
 }
 
 void LoadStoreQueue::pop() {
     if (sz == 0) return;
+    entries[head].valid = false;
     head = (head + 1) % rs_size;
     sz--;
 }

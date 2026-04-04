@@ -1,4 +1,5 @@
 #include "../include/Processor.h"
+#include <iostream>
 
 Processor::Processor(ProcessorConfig& config) {
     pc = 0;
@@ -42,31 +43,37 @@ void Processor::stageFetch() {
 
     pc = next_pc;
     current_ins = &inst_memory[pc];
+    
+    log_file << "[Cycle " << clock_cycle << "] FETCH:  PC " << pc << " -> Latch\n";
+
     if(current_ins->op == OpCode::J) {
         next_pc = current_ins->imm;
-    }
-    else if(isBranchInstruction(current_ins->op)) {
+    } else if(isBranchInstruction(current_ins->op)) {
         next_pc = BP.predict(pc, current_ins->imm);
-    }
-    else {
+    } else {
         next_pc = pc + 1;
     }
 };
 
 
-
 void Processor::stageDecode() {
     if (current_ins == nullptr) return;
+    if (ROB.isFull()) return;
 
     if(current_ins->op == OpCode::J) {
+        int tag = ROB.getNextTag(); // Get tag before inserting
         ROBEntry rb_entry;
         rb_entry.busy = false;
+        rb_entry.valid = true;
         rb_entry.ins = *current_ins;
         rb_entry.dest = current_ins->dest;
         rb_entry.value = 1;  
         rb_entry.exception = false;
         rb_entry.predicted_pc = next_pc;
         ROB.insert(rb_entry);
+        
+        log_file << "[Cycle " << clock_cycle << "] DECODE: Assigned PC " << current_ins->pc << " to ROB " << tag << "\n";
+        
         current_ins = nullptr;
         return;
     }
@@ -85,14 +92,14 @@ void Processor::stageDecode() {
     int Vj = (Qj == -1 and current_ins->src1 >= 0) ? ARF[current_ins->src1] : -1;
     int Vk = (Qk == -1 and current_ins->src2 >= 0) ? ARF[current_ins->src2] : -1;
 
-    if (Qj != -1) {
+    if (Qj != -1 and ROB.buffer[Qj].valid) {
         if (!ROB.buffer[Qj].busy) { 
             Vj = ROB.buffer[Qj].value;
             Qj = -1;
         }
     }
 
-    if (Qk != -1) {
+    if (Qk != -1 and ROB.buffer[Qk].valid) {
         if (!ROB.buffer[Qk].busy) {
             Vk = ROB.buffer[Qk].value;
             Qk = -1;
@@ -114,6 +121,7 @@ void Processor::stageDecode() {
 
     ROBEntry rb_entry;
     rb_entry.busy = true;
+    rb_entry.valid = true;
     rb_entry.ins = *current_ins;
     rb_entry.dest = current_ins->dest;
     rb_entry.value = 0;  // Placeholder, calculated later   
@@ -127,6 +135,8 @@ void Processor::stageDecode() {
     }
 
     ROB.insert(rb_entry);
+    
+    log_file << "[Cycle " << clock_cycle << "] DECODE: Assigned PC " << current_ins->pc << " to ROB " << tag << "\n";
 
     if(current_ins->dest > 0) {
         RAT[current_ins->dest] = tag;
@@ -147,11 +157,29 @@ void Processor::stageExecuteAndBroadcast() {
     for(auto & [type, eu] : EUS) eu.dispatch();
     LSQ.dispatch();
 
+    for (auto& [type, eu] : EUS) {
+        for (int i = 0; i < (int)eu.pipeline.size(); i++) {
+            if (eu.pipeline[i].valid) {
+                int remaining = eu.latency - 1 - i;
+                log_file << "[Cycle " << clock_cycle << "] EXE:    ROB " << eu.pipeline[i].parent->rob_tag 
+                          << " | Remaining: " << remaining << "\n";
+            }
+        }
+    }
+    for (int i = 0; i < (int)LSQ.pipeline.size(); i++) {
+        if (LSQ.pipeline[i].valid) {
+            int remaining = LSQ.latency - 1 - i;
+            log_file << "[Cycle " << clock_cycle << "] EXE:    ROB " << LSQ.pipeline[i].parent->rob_tag 
+                      << " | Remaining: " << remaining << "\n";
+        }
+    }
+
     for (auto& [type, eu] : EUS) eu.executeCycle();
     LSQ.executeCycle(Memory);
     
     for(auto &[type, eu] : EUS) {
         for (auto& bc : eu.ready_to_broadcast) {
+            log_file << "[Cycle " << clock_cycle << "] BROADCAST: ROB " << bc.tag << " finished executing!\n";
             BUS.broadcast(bc.tag, bc.value, bc.exception);
             listenAll();
         }
@@ -159,6 +187,7 @@ void Processor::stageExecuteAndBroadcast() {
     }
 
     for (auto& bc : LSQ.ready_to_broadcast) {
+        log_file << "[Cycle " << clock_cycle << "] BROADCAST: ROB " << bc.tag << " finished executing!\n";
         BUS.broadcast(bc.tag, bc.value, bc.exception);
         listenAll();
     }
@@ -170,7 +199,9 @@ void Processor::stageCommit() {
     if(ROB.isEmpty()) return;
     ROBEntry &head = ROB.buffer[ROB.head];
 
-    if (head.busy) return; 
+    if (head.busy or !head.valid) return; 
+    
+    log_file << "[Cycle " << clock_cycle << "] COMMIT: ROB " << ROB.head << " retired!\n";
 
     if (head.exception) {
         pc = head.ins.pc; 
@@ -235,22 +266,22 @@ bool Processor::step() {
     if (exception) return false; 
     flushed_this_cycle = false;
     clock_cycle++;
+    
+    log_file << "PIPELINE LOGIC ACTIVATED\n";
+    
     stageCommit();
     stageExecuteAndBroadcast();
     stageDecode();
     stageFetch();
 
-    logCycleState();
-
-    if((next_pc >= pc_limit) and ROB.isEmpty()) {
-        return false;
-    }
+    bool finished = (next_pc >= pc_limit) and ROB.isEmpty() and (current_ins == nullptr);
+    if(finished) return false;
     return true;
 }
 
 void Processor::dumpArchitecturalState() const {
     std::cout << "\n=== ARCHITECTURAL STATE (CYCLE " << clock_cycle << ") ===\n";
-    for (int i = 0; i < ARF.size(); i++) {
+    for (int i = 0; i < (int)ARF.size(); i++) {
         std::cout << "x" << i << ": " << std::setw(4) << ARF[i] << " | ";
         if ((i+1) % 8 == 0) std::cout << std::endl;
     }
@@ -279,68 +310,4 @@ void Processor::setupLogging() {
     if (log_file.is_open()) {
         log_file << "Simulation started at: " << filename << "\n";
     }
-}
-
-void Processor::logCycleState() {
-    if (!log_file.is_open()) return;
-
-    log_file << "\n" << std::string(50, '=') << "\n";
-    log_file << "CYCLE: " << clock_cycle << " | PC: " << pc << " | Next PC: " << next_pc << "\n";
-    log_file << std::string(50, '-') << "\n";
-
-    // 2. Log ROB Status to file
-    log_file << "REORDER BUFFER (Head: " << ROB.head << ", Tail: " << ROB.tail << "):\n";
-    if (ROB.isEmpty()) {
-        log_file << "  [Empty]\n";
-    } else {
-        int i = ROB.head;
-        while (true) {
-            ROBEntry &e = ROB.buffer[i];
-            log_file << "  Tag " << i << " | Busy: " << (e.busy ? "Yes" : "No ") 
-                      << " | Inst: " << opMapRev.at(e.ins.op) << " | Dest: x" << e.dest 
-                      << " | Value: " << e.value << "\n";
-            
-            i = (i + 1) % ROB.rob_size;
-            if (i == ROB.tail) break;
-        }
-    }
-
-    // 3. Log Reservation Stations to file
-    log_file << "\nRESERVATION STATIONS:\n";
-    for (auto& [type, eu] : EUS) {
-        log_file << "  Unit " << static_cast<int>(type) << " (Size: " << eu.rs.sz << "):\n";
-        for (auto& entry : eu.rs.entries) {
-            if (entry.valid) {
-                log_file << "    [Tag " << entry.rob_tag << "] Op: " << opMapRev.at(entry.op)
-                          << " | Qj: " << entry.Qj << " | Qk: " << entry.Qk 
-                          << " | Vj: " << entry.Vj << " | Vk: " << entry.Vk << "\n";
-            }
-        }
-    }
-
-    // 4. Log LSQ to file
-    log_file << "\nLOAD/STORE QUEUE:\n";
-    if (LSQ.entries.empty()) {
-        log_file << "  [Empty]\n";
-    } else {
-        for (auto& entry : LSQ.entries) {
-            log_file << "    [Tag " << entry.rob_tag << "] Op: " << opMapRev.at(entry.op)
-                      << " | Addr: " << entry.A << " | Busy: " << (entry.valid ? "Yes" : "No") << "\n";
-        }
-    }
-
-    // 5. Log RAT to file
-    log_file << "\nREGISTER ALIAS TABLE (RAT):\n  ";
-    bool rat_empty = true;
-    for (int i = 0; i < (int)RAT.size(); i++) {
-        if (RAT[i] != -1) {
-            log_file << "x" << i << "->Tag " << RAT[i] << " | ";
-            rat_empty = false;
-        }
-    }
-    if (rat_empty) log_file << "[All Clear]";
-    log_file << "\n" << std::string(50, '=') << "\n";
-    
-    // Optional: Force the data to be written to the disk immediately
-    log_file.flush(); 
 }

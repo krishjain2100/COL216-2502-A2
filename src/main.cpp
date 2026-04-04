@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
     }
 
     std::string filename = argv[1];
+    preprocess(filename); // comment out before submitting
 
     ProcessorConfig config;
     Processor cpu = Processor(config);

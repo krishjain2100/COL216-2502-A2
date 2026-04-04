@@ -56,5 +56,4 @@ public:
     bool step();
     void dumpArchitecturalState() const;
     void setupLogging();
-    void logCycleState();
 };
